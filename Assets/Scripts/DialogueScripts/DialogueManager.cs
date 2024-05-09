@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
 
     public Animator animator;
+    public Animator Playeranimator;
+
 
     private Queue<string> sentenceQueue;
     private Queue<string> nameQueue;
@@ -22,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("IsOpen", true);
+        Playeranimator.SetBool("IsTalking" ,true);
         // nameText.text = dialogue.name;
         sentenceQueue.Clear();
         nameQueue.Clear();
@@ -64,5 +67,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        Playeranimator.SetBool("IsTalking", false);
     }
 }
