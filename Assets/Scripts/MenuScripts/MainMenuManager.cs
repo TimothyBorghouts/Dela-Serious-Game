@@ -15,7 +15,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("LivingroomScene");
+        SceneManager.LoadScene("BedroomScene");
     }
 
     public void OpenSettings()

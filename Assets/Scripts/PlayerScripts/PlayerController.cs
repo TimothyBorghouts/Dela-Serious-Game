@@ -1,30 +1,44 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
-namespace PlayerScripts
+public class PlayerController : MonoBehaviour
 {
-    public class PlayerController : MonoBehaviour
+    public Rigidbody2D rigidBody;
+    public Animator playerAnimator;
+    private Vector2 moveInput;
+    public float walkSpeed;
+
+
+    void Update()
     {
-        private Vector2 _moveInput;
-        private bool _isMoving;
-        public float walkSpeed;
-        private Rigidbody2D _rigidBody;
+        rigidBody.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);
 
-        private void Start()
+        playerAnimator.SetFloat("Horizontal", moveInput.x);
+        playerAnimator.SetFloat("Vertical", moveInput.y);
+
+        if (moveInput.x == 0 && moveInput.y == 0)
         {
-            _rigidBody = GetComponent<Rigidbody2D>();
+            playerAnimator.SetBool("IsMoving", false);
+        } else if (moveInput.x != 0 || moveInput.y != 0)
+        {
+            playerAnimator.SetBool("IsMoving", true);
         }
 
-        private void Update()
+        if (moveInput.x == 1 || moveInput.x == -1)
         {
-            _rigidBody.velocity = new Vector2(_moveInput.x * walkSpeed , _moveInput.y * walkSpeed );
-        }
+            playerAnimator.SetFloat("Last Horizontal", moveInput.x);
+            playerAnimator.SetFloat("Last Vertical", 0);
 
-        public void OnMove(InputAction.CallbackContext context)
-        {
-            _moveInput = context.ReadValue<Vector2>();
-            _isMoving = _moveInput != Vector2.zero;
         }
+        else if (moveInput.y == 1 || moveInput.y == -1)
+        {
+            playerAnimator.SetFloat("Last Vertical", moveInput.y);
+            playerAnimator.SetFloat("Last Horizontal", 0);
+        }
+        
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
     }
 }
