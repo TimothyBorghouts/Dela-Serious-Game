@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 753b166274d5e244ca1951c98f3cbc5c
+guid: 064dc450ec1014842b122d5e0e8962b1
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Super Creamy
+  - Modern Aesthetic - Demo Version
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
