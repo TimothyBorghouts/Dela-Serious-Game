@@ -10,22 +10,28 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    private Queue<string> sentences;
+    private Queue<string> sentenceQueue;
+    private Queue<string> nameQueue;
 
     void Start()
     {
-        sentences = new Queue<string>();
+        sentenceQueue = new Queue<string>();
+        nameQueue = new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("IsOpen", true);
-        nameText.text = dialogue.name;
-        sentences.Clear();
+        // nameText.text = dialogue.name;
+        sentenceQueue.Clear();
+        nameQueue.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+
+        // foreach (string sentence in dialogue.sentences)
+        for (int i = 0; i < dialogue.sentences.Length; i++)
         {
-            sentences.Enqueue(sentence);
+            sentenceQueue.Enqueue(dialogue.sentences[i]);
+            nameQueue.Enqueue(dialogue.names[i]);
         }
 
         DisplayNextSentence();
@@ -33,13 +39,14 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if (sentences.Count == 0)
+        if (sentenceQueue.Count == 0)
         {
             EndDialogue();
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        string sentence = sentenceQueue.Dequeue();
+        nameText.text = nameQueue.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }

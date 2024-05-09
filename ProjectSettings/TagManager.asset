@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 3134555181
+    locked: 0
+  - name: FloorFurniture
+    uniqueID: 2277507963
+    locked: 0
+  - name: Walls
+    uniqueID: 3008417519
+    locked: 0
+  - name: WallFurniture
+    uniqueID: 1219587527
+    locked: 0
+  - name: Furniture
+    uniqueID: 431692515
+    locked: 0
+  - name: Player
+    uniqueID: 3031298829
+    locked: 0
