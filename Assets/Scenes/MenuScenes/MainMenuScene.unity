@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4bc4fbce693db334eb2dc2e78ca7519b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f45244ee025ac44ab2e1e6bfc749617, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1096,15 +1096,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2769738313668081430, guid: 47579f1f504d13b41b9f45e12a8bbb15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 2769738313668081430, guid: 47579f1f504d13b41b9f45e12a8bbb15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 2769738313668081430, guid: 47579f1f504d13b41b9f45e12a8bbb15, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -2202.9072
       objectReference: {fileID: 0}
     - target: {fileID: 2769738313668081430, guid: 47579f1f504d13b41b9f45e12a8bbb15, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1137,6 +1137,10 @@ PrefabInstance:
     - target: {fileID: 5068991318897457892, guid: 47579f1f504d13b41b9f45e12a8bbb15, type: 3}
       propertyPath: m_Name
       value: MenuCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5892912431739484324, guid: 47579f1f504d13b41b9f45e12a8bbb15, type: 3}
+      propertyPath: orthographic size
+      value: 1101.4536
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
