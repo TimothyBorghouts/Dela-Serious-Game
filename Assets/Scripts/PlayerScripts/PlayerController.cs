@@ -11,6 +11,40 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // color test
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
+            postProcessing.AddRedKeysToHue();
+        }
+        if (Keyboard.current.oKey.wasPressedThisFrame)
+        {
+            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
+            postProcessing.AddOrangeKeysToHue();
+        }
+        if (Keyboard.current.yKey.wasPressedThisFrame)
+        {
+            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
+            postProcessing.AddYellowKeysToHue();
+        }
+        if (Keyboard.current.gKey.wasPressedThisFrame)
+        {
+            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
+            postProcessing.AddGreenKeysToHue();
+        }
+        if (Keyboard.current.bKey.wasPressedThisFrame)
+        {
+            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
+            postProcessing.AddBlueKeysToHue();
+        }
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
+            postProcessing.AddPurpleKeysToHue();
+        }
+        // end color test
+        
+        
         playerAnimator.SetFloat("Horizontal", moveInput.x);
         playerAnimator.SetFloat("Vertical", moveInput.y);
 

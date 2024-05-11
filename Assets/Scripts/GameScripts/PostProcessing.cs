@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -5,105 +6,123 @@ public class PostProcessing : MonoBehaviour
 {
 
     public float saturationSteps;
-    ColorGrading colorGradingLayer = null;
     PostProcessVolume volume;
+
+    private float _borderRedOrange = 0.04f;
+    private float _borderOrangeYellow = 0.10f;
+    private float _borderYellowGreen = 0.21f;
+    private float _borderGreenBlue = 0.46f;
+    private float _borderBluePurple = 0.66f;
+    private float _borderPurpleRed = 0.87f;
 
     private void Start()
     {
         volume = gameObject.GetComponent<PostProcessVolume>();
-        removeSat2();
+        Add0KeysToHue();
     }
 
-    public void removeSat2()
+    private void AddKeysToHue(Tuple<float, float>[] borders)
     {
-        ColorGrading setting = volume.profile.GetSetting<ColorGrading>();
-        SplineParameter hueVsSatCurve = setting.hueVsSatCurve;
-        Spline spline = hueVsSatCurve.value;
-        float[] cachedData = spline.cachedData;
-        Debug.Log(cachedData.Length);
+        ColorGrading colorGrading = volume.profile.GetSetting<ColorGrading>();
 
-        for (int i = 0; i < cachedData.Length; i++)
+        AnimationCurve curve = colorGrading.hueVsSatCurve.value.curve;
+
+        foreach (var border in borders)
         {
-            cachedData[i] = 0f;
-            Debug.Log(cachedData[i]);
+            Keyframe key = new Keyframe(border.Item1, border.Item2);
+            key.inWeight = 1;
+            key.outWeight = 1;
+            curve.AddKey(key);
         }
 
-        hueVsSatCurve.value.cachedData = cachedData;
-
-        setting.hueVsSatCurve = hueVsSatCurve;
-
-        AnimationCurve curve = spline.curve;
-        curve.AddKey(0, 0);
-
         volume.profile.RemoveSettings<ColorGrading>();
-
-        setting.hueVsSatCurve.value.curve = curve;
-
-        volume.profile.AddSettings(setting);
+        colorGrading.hueVsSatCurve.value.curve = curve;
+        volume.profile.AddSettings(colorGrading);
     }
 
-    //public void removeSat3()
-    //{
-    //    volume.profile.TryGetSettings(out ColorGrading colorGrading);
-    //    SplineParameter hueVsSatCurve = colorGrading.hueVsSatCurve;
-    //    Spline spline = hueVsSatCurve.value;
+    // NOTE: keys may not overlap, so small values were added to make sure they don't
 
-    //    spline.curve = new AnimationCurve();
+    public void Add0KeysToHue()
+    {
+        var borders = new Tuple<float, float>[]
+        {
+            new Tuple<float, float>(0, 0),
+            new Tuple<float, float>(1, 0)
+        };
+        AddKeysToHue(borders);
+    }
 
-    //    for (int i = 0; i < spline.curve.keys.Length; i++)
-    //    {
-    //        Keyframe keyframe = spline.curve.keys[i];
-    //        spline.curve.keys[i].value = 0;
-    //        spline.curve.MoveKey(i, keyframe);
-    //    }
+    public void AddRedKeysToHue(){
+        var borders = new Tuple<float, float>[]
+        {
+            new Tuple<float, float> (0 + 0.001f, 0.5f),
+            new Tuple<float, float>(_borderRedOrange - 0.002f, 0.5f),
+            new Tuple<float, float>(_borderRedOrange - 0.001f, 0),
+            new Tuple<float, float>(_borderPurpleRed + 0.001f, 0),
+            new Tuple<float, float>(_borderPurpleRed + 0.002f, 0.5f),
+            new Tuple<float, float>(1 - 0.002f, 0.5f)
+        };
+        AddKeysToHue(borders);
+    }
 
-    //    colorGrading.hueVsSatCurve.Override(spline);
+    public void AddOrangeKeysToHue()
+    {
+        var borders = new Tuple<float, float>[]
+        {
+            new Tuple<float, float>(_borderRedOrange, 0),
+            new Tuple<float, float>(_borderRedOrange + 0.001f, 0.5f),
+            new Tuple<float, float>(_borderOrangeYellow - 0.002f, 0.5f),
+            new Tuple<float, float>(_borderOrangeYellow - 0.001f, 0)
+        };
+        AddKeysToHue(borders);
+    }
 
-    //}
+    public void AddYellowKeysToHue()
+    {
+        var borders = new Tuple<float, float>[]
+        {
+            new Tuple<float, float>(_borderOrangeYellow, 0),
+            new Tuple<float, float>(_borderOrangeYellow + 0.001f, 0.5f),
+            new Tuple<float, float>(_borderYellowGreen - 0.002f, 0.5f),
+            new Tuple<float, float>(_borderYellowGreen - 0.001f, 0)
+        };
+        AddKeysToHue(borders);
+    }
 
-    //public void removeSaturations()
-    //{
-    //    volume.profile.TryGetSettings(out colorGradingLayer);
-    //    colorGradingLayer.saturation.value = -100f;
-    //}
+    public void AddGreenKeysToHue()
+    {
+        var borders = new Tuple<float, float>[]
+        {
+            new Tuple<float, float>(_borderYellowGreen, 0),
+            new Tuple<float, float>(_borderYellowGreen + 0.001f, 0.5f),
+            new Tuple<float, float>(_borderGreenBlue - 0.002f, 0.5f),
+            new Tuple<float, float>(_borderGreenBlue - 0.001f, 0)
+        };
+        AddKeysToHue(borders);
+    }
 
-    //public void addSaturation()
-    //{
-    //    if (colorGradingLayer.saturation.value >= 0)
-    //    {
-    //        return;
-    //    }
-    //    volume.profile.TryGetSettings(out colorGradingLayer);
-    //    colorGradingLayer.saturation.value += (100 / saturationSteps);
-    //}
+    public void AddBlueKeysToHue()
+    {
+        var borders = new Tuple<float, float>[]
+        {
+            new Tuple<float, float>(_borderGreenBlue, 0),
+            new Tuple<float, float>(_borderGreenBlue + 0.001f, 0.5f),
+            new Tuple<float, float>(_borderBluePurple - 0.002f, 0.5f),
+            new Tuple<float, float>(_borderBluePurple - 0.001f, 0)
+        };
+        AddKeysToHue(borders);
+    }
 
-    //public void changeSatAndHue()
-    //{
-    //    ColorGrading setting = profile.GetSetting<ColorGrading>();
-    //    SplineParameter hueVsSatCurve = setting.hueVsSatCurve;
-    //    Debug.Log(hueVsSatCurve.value);
-    //    Spline spline = hueVsSatCurve.value;
-    //    float[] cachedData = spline.cachedData;
-    //    Debug.Log(cachedData.Length);
-
-    //    for (int i = 0; i < 100; i++)
-    //    {
-    //        cachedData[i] = 0.7f;
-    //    }
-
-
-    //    for (int i = 0; i < cachedData.Length; i++)
-    //    {
-    //        Debug.Log(cachedData[i]);
-    //    }
-
-    //    SplineParameter newHueVsSatCurve = new SplineParameter();
-
-    //    hueVsSatCurve.value.cachedData = cachedData;
-
-    //    setting.hueVsSatCurve = hueVsSatCurve;
-
-    //    profile.AddSettings(setting);
-    //}
+    public void AddPurpleKeysToHue()
+    {
+        var borders = new Tuple<float, float>[]
+        {
+            new Tuple<float, float>(_borderBluePurple, 0),
+            new Tuple<float, float>(_borderBluePurple + 0.001f, 0.5f),
+            new Tuple<float, float>(_borderPurpleRed - 0.002f, 0.5f),
+            new Tuple<float, float>(_borderPurpleRed - 0.001f, 0)
+        };
+        AddKeysToHue(borders);
+    }
 
 }
