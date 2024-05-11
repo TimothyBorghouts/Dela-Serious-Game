@@ -15,32 +15,32 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.AddRedKeysToHue();
+            postProcessing.IncreaseRedSaturation();
         }
         if (Keyboard.current.oKey.wasPressedThisFrame)
         {
             PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.AddOrangeKeysToHue();
+            postProcessing.IncreaseOrangeSaturation();
         }
         if (Keyboard.current.yKey.wasPressedThisFrame)
         {
             PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.AddYellowKeysToHue();
+            postProcessing.IncreaseYellowSaturation();
         }
         if (Keyboard.current.gKey.wasPressedThisFrame)
         {
             PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.AddGreenKeysToHue();
+            postProcessing.IncreaseGreenSaturation();
         }
         if (Keyboard.current.bKey.wasPressedThisFrame)
         {
             PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.AddBlueKeysToHue();
+            postProcessing.IncreaseBlueSaturation();
         }
         if (Keyboard.current.pKey.wasPressedThisFrame)
         {
             PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.AddPurpleKeysToHue();
+            postProcessing.IncreasePurpleSaturation();
         }
         // end color test
         
