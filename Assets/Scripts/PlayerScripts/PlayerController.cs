@@ -11,7 +11,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // color test
+
+        if (Keyboard.current.kKey.wasPressedThisFrame)
+        {
+            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
+            postProcessing.AddKeysToHue();
+        }
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
             PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
@@ -41,9 +46,7 @@ public class PlayerController : MonoBehaviour
         {
             PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
             postProcessing.IncreasePurpleSaturation();
-        }
-        // end color test
-        
+        }        
         
         playerAnimator.SetFloat("Horizontal", moveInput.x);
         playerAnimator.SetFloat("Vertical", moveInput.y);

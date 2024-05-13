@@ -10,6 +10,12 @@ public class DialogueInteractable : MonoBehaviour
 
     public Dialogue dialogue;
 
+    public bool DialogueEndAction;
+
+    public DialogueEndAction dialogueEndAction;
+
+    public string endAction;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && isInRange)
@@ -27,6 +33,10 @@ public class DialogueInteractable : MonoBehaviour
                 if (currentSentenceIndex < 1)
                 {
                     isOpen = false;
+                    if (DialogueEndAction)
+                    {
+                        dialogueEndAction.ExecuteAction(endAction);
+                    }
                 }
             }
         }

@@ -43,6 +43,7 @@ public class PostProcessing : MonoBehaviour
     // NOTE: keys may not overlap, so small values were added to make sure they don't
     public void AddKeysToHue()
     {
+        Debug.Log("Adding keys to hue");
         var borders = new Tuple<float, float>[]
         {
             new Tuple<float, float>(0, 0), // 0
@@ -96,7 +97,7 @@ public class PostProcessing : MonoBehaviour
             keyframe.value = keyframe.value + 0.1f;
             if (keyframe.value > 0.5f)
             {
-                keyframe.value = 0.5f;
+                keyframe.value = 0f;
             }
             curve.MoveKey(i, keyframe);
         }
