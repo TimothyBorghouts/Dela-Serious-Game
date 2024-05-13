@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class DialogueEndAction : MonoBehaviour
 {
-   public PostProcessing postProcessing;
+   private PostProcessing postProcessing;
+
+    void Start()
+    {
+        postProcessing = FindObjectOfType<PostProcessing>();
+    }
 
     public void ExecuteAction(string action)
     {

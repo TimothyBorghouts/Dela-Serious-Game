@@ -10,13 +10,15 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
     public Animator Playeranimator;
-
+    
+    private AudioManager audioManager;
 
     private Queue<string> sentenceQueue;
     private Queue<string> nameQueue;
 
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         sentenceQueue = new Queue<string>();
         nameQueue = new Queue<string>();
     }
@@ -25,12 +27,10 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", true);
         Playeranimator.SetBool("IsTalking" ,true);
-        // nameText.text = dialogue.name;
         sentenceQueue.Clear();
         nameQueue.Clear();
 
 
-        // foreach (string sentence in dialogue.sentences)
         for (int i = 0; i < dialogue.sentences.Length; i++)
         {
             sentenceQueue.Enqueue(dialogue.sentences[i]);
@@ -56,12 +56,14 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence(string sentence)
     {
+        audioManager.PlaySound("DialogueSound");
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.020f);
         }
+        audioManager.StopAudio("DialogueSound");
     }
 
     void EndDialogue()

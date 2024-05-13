@@ -5,6 +5,9 @@ using UnityEngine.Rendering.PostProcessing;
 public class PostProcessing : MonoBehaviour
 {
 
+    public static PostProcessing Instance;
+
+
     public float saturationSteps;
     PostProcessVolume volume;
 
@@ -15,10 +18,23 @@ public class PostProcessing : MonoBehaviour
     private float _borderBluePurple = 0.66f;
     private float _borderPurpleRed = 0.87f;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     private void Start()
     {
         volume = gameObject.GetComponent<PostProcessVolume>();
-        AddKeysToHue();
     }
 
     private void AddKeysToHue(Tuple<float, float>[] borders)
@@ -94,10 +110,10 @@ public class PostProcessing : MonoBehaviour
         foreach (int i in indices)
         {
             Keyframe keyframe = curve.keys[i];
-            keyframe.value = keyframe.value + 0.1f;
+            keyframe.value = keyframe.value + 0.5f;
             if (keyframe.value > 0.5f)
             {
-                keyframe.value = 0f;
+                keyframe.value = 0.5f;
             }
             curve.MoveKey(i, keyframe);
         }

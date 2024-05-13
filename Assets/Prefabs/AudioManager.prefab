@@ -45,23 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: TestMusic
+  - name: BackgroundMusic
     clip: {fileID: 8300000, guid: 18b450e700d41fd49810805a9859cfea, type: 3}
-    source: {fileID: 0}
-    volume: 1
+    volume: 0.75
     pitch: 1
     loop: 1
-  - name: TestSoundEffect
-    clip: {fileID: 8300000, guid: 6e093dd96322b2742b14d8a780328d36, type: 3}
     source: {fileID: 0}
-    volume: 1
+  - name: DialogueSound
+    clip: {fileID: 8300000, guid: d9121538c57681447b2621e0ec396dd5, type: 3}
+    volume: 3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Footsteps
+    clip: {fileID: 8300000, guid: ab33ab6cfac254e48b9b566fa9a5b594, type: 3}
+    volume: 1.48
     pitch: 1
     loop: 0
-  - name: Hallo
-    clip: {fileID: 8300000, guid: 6e093dd96322b2742b14d8a780328d36, type: 3}
     source: {fileID: 0}
-    volume: 1
-    pitch: 1
-    loop: 0
   MusicMixerGroup: {fileID: -2897882756473779145, guid: 85da74f7c36abbb4888e6d0f3e93da28, type: 2}
   SFXMixerGroup: {fileID: 3190336401219320609, guid: 85da74f7c36abbb4888e6d0f3e93da28, type: 2}

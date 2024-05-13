@@ -4,13 +4,13 @@ using UnityEngine.Audio;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public AudioManager audioManager;
-    public AudioMixer AudioMixer;
+    public AudioMixer audioMixer;
 
-    public void Start()
+    void Start()
     {
         LoadSettings();
-        AudioManager.Instance.PlayMusic("TestMusic");
+        AudioManager audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.PlayMusic("BackgroundMusic");
     }
 
     public void StartGame()
@@ -30,8 +30,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadSettings()
     {
-        AudioMixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume", -20));
-        AudioMixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume", -20));
-        AudioMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume", -20));
+        audioMixer.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MasterVolume", -20));
+        audioMixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume", -20));
+        audioMixer.SetFloat("SFXVolume", PlayerPrefs.GetFloat("SFXVolume", -20));
     }
 }

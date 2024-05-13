@@ -8,6 +8,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     public float walkSpeed;
 
+    private AudioManager audioManager;
+
+    void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     void Update()
     {
@@ -61,10 +67,12 @@ public class PlayerController : MonoBehaviour
 
         if (moveInput.x == 0 && moveInput.y == 0)
         {
+            audioManager.StopAudio("Footsteps");
             playerAnimator.SetBool("IsMoving", false);
         }
         else if (moveInput.x != 0 || moveInput.y != 0)
         {
+            audioManager.PlaySound("Footsteps");
             playerAnimator.SetBool("IsMoving", true);
         }
 

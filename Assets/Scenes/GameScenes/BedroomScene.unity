@@ -576,17 +576,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &176832940 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5056811297055712654, guid: 16e16097e620f66499f577c368b5c157, type: 3}
-  m_PrefabInstance: {fileID: 2806729626160467407}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbab2a07401dee4c95b0f26cfc77b36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &257274643
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,11 +786,6 @@ Transform:
   - {fileID: 897687561}
   m_Father: {fileID: 257274644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &649476047 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 67682730612502640, guid: c7dde0640472d9b41a52932d93beef27, type: 3}
-  m_PrefabInstance: {fileID: 1188183439}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &653922803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,7 +801,7 @@ PrefabInstance:
     - target: {fileID: 4499560835896060991, guid: 2f4a4b9c985a90e4394ca440568f2a65, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 649476047}
+      objectReference: {fileID: 1188183440}
     - target: {fileID: 4499560835896060991, guid: 2f4a4b9c985a90e4394ca440568f2a65, type: 3}
       propertyPath: nameText
       value: 
@@ -886,6 +870,7 @@ GameObject:
   - component: {fileID: 672418682}
   - component: {fileID: 672418683}
   - component: {fileID: 672418684}
+  - component: {fileID: 672418685}
   m_Layer: 0
   m_Name: LivingroomCollider
   m_TagString: Untagged
@@ -968,6 +953,58 @@ MonoBehaviour:
   Transition: {fileID: 1213236331}
   sceneName: LivingroomScene
   playerPosition: {x: 3.5, y: 0.75}
+--- !u!60 &672418685
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672418681}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.9038486, y: -0.38981503}
+      - {x: 1.0080397, y: -0.39503878}
+      - {x: 0.9106772, y: -1.3787533}
+      - {x: 0.9765501, y: -1.6665051}
+      - {x: 0.9851537, y: -2.306244}
+      - {x: 1.6671928, y: -2.32719}
+      - {x: 3.8392663, y: -2.399955}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &786592591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,11 +1125,11 @@ MonoBehaviour:
   dialogueManager: {fileID: 1060495045}
   dialogue:
     sentences:
-    - "It\u2019s my bed. Should I go back to sleep?"
+    - It's not the time to sleep
     names:
     - You
   DialogueEndAction: 0
-  dialogueEndAction: {fileID: 0}
+  dialogueEndAction: {fileID: 1647636087}
   endAction: 
 --- !u!70 &897687564
 CapsuleCollider2D:
@@ -1972,9 +2009,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 56261142e1e5f014aa1bed252e07d94d, type: 3}
+      objectReference: {fileID: 21300000, guid: 63f2933ae7aabd54e8c70a631c860506, type: 3}
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1998,6 +2043,10 @@ PrefabInstance:
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SortingLayerID
       value: -1128614357
+      objectReference: {fileID: 0}
+    - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5986884703465721180, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2226,6 +2275,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7dde0640472d9b41a52932d93beef27, type: 3}
+--- !u!95 &1188183440 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8145068198800149113, guid: c7dde0640472d9b41a52932d93beef27, type: 3}
+  m_PrefabInstance: {fileID: 1188183439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1212807819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3919072205454691910, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
@@ -2760,12 +2814,11 @@ MonoBehaviour:
   dialogueManager: {fileID: 1060495045}
   dialogue:
     sentences:
-    - "All my favorite outfits are in here. I don\u2019t feel like dressing up right
-      now, though."
+    - Sad
     names:
     - You
   DialogueEndAction: 0
-  dialogueEndAction: {fileID: 0}
+  dialogueEndAction: {fileID: 1647636087}
   endAction: 
 --- !u!1 &1517006773
 GameObject:
@@ -3559,7 +3612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f470bf7f93b39744af775c9f5373f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  postProcessing: {fileID: 176832940}
 --- !u!4 &1647636088
 Transform:
   m_ObjectHideFlags: 0
@@ -5085,7 +5137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8176516533200146451, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_ShowToolkit
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8176516533200146451, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_ShowCustomSorter

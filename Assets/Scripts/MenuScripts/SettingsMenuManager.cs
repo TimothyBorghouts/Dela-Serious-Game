@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,12 +9,13 @@ public class SettingsMenuManager : MonoBehaviour
     public Slider musicVolumeSlider;
     public Slider sfxVolumeSlider;
 
-    public AudioManager audioManager;
-    public AudioMixer AudioMixer;
+    private AudioManager audioManager;
+    public AudioMixer audioMixer;
 
 
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         LoadSettings();
     }
 
@@ -33,19 +33,19 @@ public class SettingsMenuManager : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
-        AudioMixer.SetFloat("MasterVolume", volume);
+        audioMixer.SetFloat("MasterVolume", volume);
         PlayerPrefs.SetFloat("MasterVolume", volume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        AudioMixer.SetFloat("MusicVolume", volume);
+        audioMixer.SetFloat("MusicVolume", volume);
         PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 
     public void SetSFXVolume(float volume)
     {
-        AudioMixer.SetFloat("SFXVolume", volume);
+        audioMixer.SetFloat("SFXVolume", volume);
         audioManager.PlaySound("TestSoundEffect");
         PlayerPrefs.SetFloat("SFXVolume", volume);
     }
