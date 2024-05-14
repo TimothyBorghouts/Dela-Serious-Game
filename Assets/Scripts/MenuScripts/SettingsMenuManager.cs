@@ -46,7 +46,6 @@ public class SettingsMenuManager : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         audioMixer.SetFloat("SFXVolume", volume);
-        audioManager.PlaySound("TestSoundEffect");
         PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 

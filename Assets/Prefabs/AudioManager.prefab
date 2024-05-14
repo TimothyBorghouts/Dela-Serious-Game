@@ -63,5 +63,11 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: SettingsSound
+    clip: {fileID: 8300000, guid: 6b0c4c507d3cdf14891b6fbc7e516449, type: 3}
+    volume: 3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   MusicMixerGroup: {fileID: -2897882756473779145, guid: 85da74f7c36abbb4888e6d0f3e93da28, type: 2}
   SFXMixerGroup: {fileID: 3190336401219320609, guid: 85da74f7c36abbb4888e6d0f3e93da28, type: 2}

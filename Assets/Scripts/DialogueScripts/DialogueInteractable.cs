@@ -16,7 +16,9 @@ public class DialogueInteractable : MonoBehaviour
 
     public string endAction;
 
+    public bool npc;
 
+    public GameObject npcAlert;
 
     private void Update()
     {
@@ -38,6 +40,10 @@ public class DialogueInteractable : MonoBehaviour
                     if (DialogueEndAction)
                     {
                         gameObject.SetActive(false);
+                        if (npc)
+                        {
+                            npcAlert.SetActive(false);
+                        }
                         dialogueEndAction.ExecuteAction(endAction);
                     }
                 }
