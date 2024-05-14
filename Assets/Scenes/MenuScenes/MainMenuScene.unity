@@ -636,17 +636,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1088761782 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1304258711507516537, guid: 108fad741fe25e54e958f422ede30f6e, type: 3}
-  m_PrefabInstance: {fileID: 5382467774565677516}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca30c25dba9d9e248ab40a4ee96279b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1137786015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,8 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46895f72d3c62a54397d84299ba9acab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 1088761782}
-  AudioMixer: {fileID: 24100000, guid: 85da74f7c36abbb4888e6d0f3e93da28, type: 2}
+  audioMixer: {fileID: 24100000, guid: 85da74f7c36abbb4888e6d0f3e93da28, type: 2}
 --- !u!1 &1214910618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1025,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1304258711507516537, guid: 108fad741fe25e54e958f422ede30f6e, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: BackgroundMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304258711507516537, guid: 108fad741fe25e54e958f422ede30f6e, type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304258711507516537, guid: 108fad741fe25e54e958f422ede30f6e, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ab33ab6cfac254e48b9b566fa9a5b594, type: 3}
+    - target: {fileID: 1304258711507516537, guid: 108fad741fe25e54e958f422ede30f6e, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: Footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304258711507516537, guid: 108fad741fe25e54e958f422ede30f6e, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4060080738442723971, guid: 108fad741fe25e54e958f422ede30f6e, type: 3}
       propertyPath: m_Name
       value: AudioManager
