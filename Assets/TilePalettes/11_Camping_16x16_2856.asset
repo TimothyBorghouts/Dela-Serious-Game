@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 11_Camping_16x16_2856
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1004885536, guid: 98edc6aedbfd9bf409f68aa6824c0b31, type: 3}
+  m_Sprite: {fileID: 1831231117, guid: 00d58efd9cec24141885fe53f45b6755, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
