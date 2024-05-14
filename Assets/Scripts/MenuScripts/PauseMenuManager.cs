@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public PostProcessing PostProcessing;
 
     void Start()
     {

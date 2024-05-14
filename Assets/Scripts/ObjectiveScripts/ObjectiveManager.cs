@@ -1,6 +1,5 @@
-using System.Linq;
+using System.Text;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectiveManager : MonoBehaviour
@@ -11,7 +10,6 @@ public class ObjectiveManager : MonoBehaviour
     public TextMeshProUGUI objectiveList;
 
     public Objective[] objectives;
-    private Objective[] openObjectives;
 
     void Awake()
     {
@@ -27,25 +25,15 @@ public class ObjectiveManager : MonoBehaviour
         }
     }
 
-
     void Start()
     {
         foreach (Objective objective in objectives)
         {
             objective.isComplete = false;
+            objective.isOpen = false;
         }
-        AddToObjectiveList(objectives[0]);
-        openObjectives = new Objective[3];
-    }
 
-    public void CompleteObjective(string name)
-    {
-        Objective objective = FindObjective(name);
-
-        if (!objective.isComplete)
-        {
-            objective.isComplete = true;
-        }
+        AddToObjectiveList("Phone");
     }
 
     public Objective FindObjective(string name)
@@ -62,20 +50,31 @@ public class ObjectiveManager : MonoBehaviour
         return objective;
     }
 
-    public void AddToObjectiveList(Objective objective)
+    public void AddToObjectiveList(string name)
     {
-        if (objective != null)
-        {
-            openObjectives.Append(objective);
-        }
+        Objective openObjective = FindObjective(name);
+        openObjective.isOpen = true;
+        UpdateObjectiveList();
+
     }
 
     public void RemoveFromObjectiveList(Objective objective)
     {
-        if (objective != null)
+        Objective closedObjective = FindObjective(objective.objectiveName);
+        closedObjective.isComplete = true;
+        UpdateObjectiveList();
+    }
+
+    public void UpdateObjectiveList()
+    {
+        StringBuilder sb = new StringBuilder();
+        foreach (Objective obj in objectives)
         {
-
-
+            if (obj.isOpen && !obj.isComplete)
+            {
+                sb.Append("- " + obj.objectiveDescription + "\n");
+            }
         }
+        objectiveList.text = sb.ToString();
     }
 }

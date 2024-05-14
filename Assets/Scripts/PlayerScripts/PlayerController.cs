@@ -16,44 +16,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
-    {
-
-        if (Keyboard.current.kKey.wasPressedThisFrame)
-        {
-            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.AddKeysToHue();
-        }
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.IncreaseRedSaturation();
-        }
-        if (Keyboard.current.oKey.wasPressedThisFrame)
-        {
-            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.IncreaseOrangeSaturation();
-        }
-        if (Keyboard.current.yKey.wasPressedThisFrame)
-        {
-            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.IncreaseYellowSaturation();
-        }
-        if (Keyboard.current.gKey.wasPressedThisFrame)
-        {
-            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.IncreaseGreenSaturation();
-        }
-        if (Keyboard.current.bKey.wasPressedThisFrame)
-        {
-            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.IncreaseBlueSaturation();
-        }
-        if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            PostProcessing postProcessing = FindObjectOfType<PostProcessing>();
-            postProcessing.IncreasePurpleSaturation();
-        }        
-        
+    {     
         playerAnimator.SetFloat("Horizontal", moveInput.x);
         playerAnimator.SetFloat("Vertical", moveInput.y);
 
@@ -63,7 +26,6 @@ public class PlayerController : MonoBehaviour
         }
 
         rigidBody.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);
-
 
         if (moveInput.x == 0 && moveInput.y == 0)
         {
