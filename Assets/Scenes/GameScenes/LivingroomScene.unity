@@ -4529,11 +4529,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.17
+      value: 5.01
       objectReference: {fileID: 0}
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 4.82
       objectReference: {fileID: 0}
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7306,11 +7306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.17
+      value: 5.01
       objectReference: {fileID: 0}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.82
       objectReference: {fileID: 0}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8283,7 +8283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transition: {fileID: 1152540025}
-  sceneName: ForestScene
+  sceneName: OutsideScene
   playerPosition: {x: 0, y: 0}
 --- !u!1 &2135415187
 GameObject:
