@@ -7,7 +7,6 @@ public class DialogueInteractable : MonoBehaviour
     private int currentSentenceIndex;
 
     public DialogueManager dialogueManager;
-
     public Dialogue dialogue;
 
     public bool DialogueEndAction;
@@ -27,7 +26,7 @@ public class DialogueInteractable : MonoBehaviour
             if (!isOpen)
             {
                 dialogueManager.StartDialogue(dialogue);
-                currentSentenceIndex = dialogue.sentences.Length;
+                currentSentenceIndex = dialogue.dialogueParts.Length;
                 isOpen = true;
             }
             else if (isOpen)

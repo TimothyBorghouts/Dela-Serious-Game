@@ -7,7 +7,6 @@ public class PostProcessing : MonoBehaviour
 
     public static PostProcessing Instance;
 
-
     public float saturationSteps;
     PostProcessVolume volume;
 
@@ -101,7 +100,7 @@ public class PostProcessing : MonoBehaviour
         AddKeysToHue(borders);
     }
 
-    public void IncreaseSaturation(int[] indices)
+    public void IncreaseSaturationPerColor(int[] indices)
     {
         ColorGrading colorGrading = volume.profile.GetSetting<ColorGrading>();
 
@@ -122,41 +121,51 @@ public class PostProcessing : MonoBehaviour
         colorGrading.hueVsSatCurve.value.curve = curve;
         volume.profile.AddSettings(colorGrading);
     }
+
+    public void IncreaseSaturation(int[] indices)
+    {
+        IncreaseBlueSaturation();
+        IncreaseGreenSaturation();
+        IncreaseOrangeSaturation();
+        IncreasePurpleSaturation();
+        IncreaseRedSaturation();
+        IncreaseYellowSaturation();
+    }
     
 
     public void IncreaseRedSaturation(){
         int[] indices = new int[] { 1, 2, 25, 26 };
-        IncreaseSaturation(indices);
+        IncreaseSaturationPerColor(indices);
     }
 
     public void IncreaseOrangeSaturation()
     {
         int[] indices = new int[] { 5, 6 };
-        IncreaseSaturation(indices);
+        IncreaseSaturationPerColor(indices);
     }
 
     public void IncreaseYellowSaturation()
     {
         int[] indices = new int[] { 9, 10 };
-        IncreaseSaturation(indices);
+        IncreaseSaturationPerColor(indices);
     }
 
     public void IncreaseGreenSaturation()
     {
         int[] indices = new int[] { 13, 14 };
-        IncreaseSaturation(indices);
+        IncreaseSaturationPerColor(indices);
     }
 
     public void IncreaseBlueSaturation()
     {
         int[] indices = new int[] { 17, 18 };
-        IncreaseSaturation(indices);
+        IncreaseSaturationPerColor(indices);
     }
 
     public void IncreasePurpleSaturation()
     {
         int[] indices = new int[] { 21, 22 };
-        IncreaseSaturation(indices);
+        IncreaseSaturationPerColor(indices);
     }
 
 }
