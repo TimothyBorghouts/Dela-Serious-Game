@@ -10,6 +10,8 @@ public class PostProcessing : MonoBehaviour
     public float saturationSteps;
     PostProcessVolume volume;
 
+    private float colorIndex = 0.13f;
+
     private float _borderRedOrange = 0.04f;
     private float _borderOrangeYellow = 0.10f;
     private float _borderYellowGreen = 0.21f;
@@ -109,7 +111,7 @@ public class PostProcessing : MonoBehaviour
         foreach (int i in indices)
         {
             Keyframe keyframe = curve.keys[i];
-            keyframe.value = keyframe.value + 0.5f;
+            keyframe.value = keyframe.value + colorIndex;
             if (keyframe.value > 0.5f)
             {
                 keyframe.value = 0.5f;
@@ -117,19 +119,16 @@ public class PostProcessing : MonoBehaviour
             curve.MoveKey(i, keyframe);
         }
 
+        colorIndex = 0.5f - colorIndex;
+
         volume.profile.RemoveSettings<ColorGrading>();
         colorGrading.hueVsSatCurve.value.curve = curve;
         volume.profile.AddSettings(colorGrading);
     }
 
-    public void IncreaseSaturation(int[] indices)
+    public void IncreaseSaturation()
     {
-        IncreaseBlueSaturation();
-        IncreaseGreenSaturation();
-        IncreaseOrangeSaturation();
-        IncreasePurpleSaturation();
-        IncreaseRedSaturation();
-        IncreaseYellowSaturation();
+        IncreaseSaturationPerColor(new int[] { 1, 2, 5, 6, 9, 10, 13, 14, 17, 18, 21, 22, 25, 26 });
     }
     
 

@@ -41,8 +41,13 @@ public class DialogueEndAction : MonoBehaviour
                 Debug.Log("Increasing purple saturation");
                 postProcessing.IncreasePurpleSaturation();
                 break;
+            case "Increase Color":
+                Debug.Log("Increasing all colors saturation");
+                postProcessing.IncreaseSaturation();
+                break;
             default:
                 break;
         }
     }
 }
+
