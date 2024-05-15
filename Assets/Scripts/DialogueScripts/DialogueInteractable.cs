@@ -31,13 +31,13 @@ public class DialogueInteractable : MonoBehaviour
             }
             else if (isOpen)
             {
+                Debug.Log(currentSentenceIndex);
                 if (dialogue.dialogueParts[dialogueManager.dialogueIndex - 1].question)
                 {
                     return;
                 }
                 dialogueManager.DisplayNextSentence();
-                currentSentenceIndex--;
-                if (currentSentenceIndex < 1)
+                if (dialogueManager.dialogueIndex > dialogue.dialogueParts.Length)
                 {
                     isOpen = false;
                     if (DialogueEndAction)

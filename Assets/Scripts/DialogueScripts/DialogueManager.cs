@@ -51,22 +51,24 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence(int answer = 0)
     {
+        dialogueIndex++;
+        ChoiceBox.SetActive(false);
+        
         if (sentenceQueue.Count == 0)
         {
             EndDialogue();
             return;
         }
 
+        //ChoiceBox.SetActive(false);
         DialoguePart dialoguePart = sentenceQueue.Dequeue();
         nameText.text = nameQueue.Dequeue();
-        dialogueIndex++;
         StopAllCoroutines();
 
         StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
-        ChoiceBox.SetActive(false);
         if (dialoguePart.question)
         {
-            DisplayQuestion(dialoguePart);
+            DisplayChoices(dialoguePart);
         }
     }
 
@@ -90,7 +92,6 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayQuestion(DialoguePart dialoguePart)
     {
-        ChoiceBox.SetActive(true);
         DisplayChoices(dialoguePart);
     }
 
