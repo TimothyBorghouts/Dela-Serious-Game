@@ -63,8 +63,11 @@ public class AudioManager : MonoBehaviour
     public void StopAudio(string name)
     {
         Sound sound = FindSound(name);
-
-        sound.source.Stop();
+            
+        if (sound.source.isPlaying)
+        {
+            sound.source.Stop();
+        }
     }
 
     public Sound FindSound(string name)

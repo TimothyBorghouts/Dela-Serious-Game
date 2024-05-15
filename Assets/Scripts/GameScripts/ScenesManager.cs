@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ScenesManager : MonoBehaviour
@@ -8,11 +7,6 @@ public class ScenesManager : MonoBehaviour
 
     public string sceneName;
     public Vector2 playerPosition;
-
-    //void Start()
-    //{
-    //    Transition.Play("FadeIn");
-    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
