@@ -2150,6 +2150,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2556947675168821748, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3919072205454691910, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Name
       value: NPCDialogueCollider
@@ -2332,7 +2336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
-      value: Dr. Meadow
+      value: ???
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].name
@@ -2372,7 +2376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.data[0]
-      value: " I\u2019m calling because something has happened to Ash"
+      value: "I\u2019m calling because something has happened to Ash"
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[3].possibleSentences.Array.data[0]
@@ -2400,6 +2404,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1749240382376763654, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1153369963}
     - targetCorrespondingSourceObject: {fileID: 3919072205454691910, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1212807822}
@@ -2409,6 +2416,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8741714200349198411, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
   m_PrefabInstance: {fileID: 1153369960}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1153369962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749240382376763654, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+  m_PrefabInstance: {fileID: 1153369960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1153369963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153369962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c721fd1f16a97964497f97ed998c4c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1188183439
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -69,5 +69,11 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Phone
+    clip: {fileID: 8300000, guid: d01d37238a9d04a4ab6ec7e656432b3b, type: 3}
+    volume: 3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   MusicMixerGroup: {fileID: -2897882756473779145, guid: 85da74f7c36abbb4888e6d0f3e93da28, type: 2}
   SFXMixerGroup: {fileID: 3190336401219320609, guid: 85da74f7c36abbb4888e6d0f3e93da28, type: 2}

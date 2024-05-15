@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        audioManager.StopAudio("Phone");
         dialogueAnimator.SetBool("IsOpen", true);
         Playeranimator.SetBool("IsTalking" ,true);
         sentenceQueue.Clear();
