@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    public int dialogueIndex;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
@@ -12,8 +14,6 @@ public class DialogueManager : MonoBehaviour
 
     public TextMeshProUGUI choice1;
     public TextMeshProUGUI choice2;
-    public TextMeshProUGUI choice3;
-    public TextMeshProUGUI choice4;
 
     public Animator dialogueAnimator;
     public Animator Playeranimator;
@@ -22,13 +22,13 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> nameQueue;
     private Queue<DialoguePart> sentenceQueue;
-  
 
     void Start()
     {
         audioManager = FindAnyObjectByType<AudioManager>();
         nameQueue = new Queue<string>();
         sentenceQueue = new Queue<DialoguePart>();
+        dialogueIndex = 0;
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
         Playeranimator.SetBool("IsTalking" ,true);
         sentenceQueue.Clear();
         nameQueue.Clear();
-
+        dialogueIndex = 0;
 
         for (int i = 0; i < dialogue.dialogueParts.Length; i++)
         {
@@ -58,6 +58,7 @@ public class DialogueManager : MonoBehaviour
 
         DialoguePart dialoguePart = sentenceQueue.Dequeue();
         nameText.text = nameQueue.Dequeue();
+        dialogueIndex++;
         StopAllCoroutines();
 
         StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
@@ -95,9 +96,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayChoices(DialoguePart dialoguePart)
     {
         ChoiceBox.SetActive(true);
-        choice1.text = dialoguePart.possibleAnswers[0];
-        choice2.text = dialoguePart.possibleAnswers[1];
-        choice3.text = dialoguePart.possibleAnswers[2];
-        choice4.text = dialoguePart.possibleAnswers[3];
+        choice1.text = dialoguePart.possibleAnswerA;
+        choice2.text = dialoguePart.possibleAnswerB;
     }
 }

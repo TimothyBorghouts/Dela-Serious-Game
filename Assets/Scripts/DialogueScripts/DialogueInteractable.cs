@@ -31,6 +31,10 @@ public class DialogueInteractable : MonoBehaviour
             }
             else if (isOpen)
             {
+                if (dialogue.dialogueParts[dialogueManager.dialogueIndex - 1].question)
+                {
+                    return;
+                }
                 dialogueManager.DisplayNextSentence();
                 currentSentenceIndex--;
                 if (currentSentenceIndex < 1)
