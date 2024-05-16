@@ -23,34 +23,7 @@ public class DialogueInteractable : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isInRange)
         {
-            if (!isOpen)
-            {
-                dialogueManager.StartDialogue(dialogue);
-                currentSentenceIndex = dialogue.dialogueParts.Length;
-                isOpen = true;
-            }
-            else if (isOpen)
-            {
-                Debug.Log(currentSentenceIndex);
-                if (dialogue.dialogueParts[dialogueManager.dialogueIndex - 1].question)
-                {
-                    return;
-                }
-                dialogueManager.DisplayNextSentence();
-                if (dialogueManager.dialogueIndex > dialogue.dialogueParts.Length)
-                {
-                    isOpen = false;
-                    if (DialogueEndAction)
-                    {
-                        gameObject.SetActive(false);
-                        if (npc)
-                        {
-                            npcAlert.SetActive(false);
-                        }
-                        dialogueEndAction.ExecuteAction(endAction);
-                    }
-                }
-            }
+            StartDialogue();
         }
     }
 
@@ -60,6 +33,11 @@ public class DialogueInteractable : MonoBehaviour
         {
             isInRange = true;
         }
+        if (CompareTag("Bedroomdoor"))
+        {
+            isInRange = true;
+            StartDialogue();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -67,6 +45,38 @@ public class DialogueInteractable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = false;
+        }
+    }
+
+    private void StartDialogue()
+    {
+        if (!isOpen)
+        {
+            dialogueManager.StartDialogue(dialogue);
+            currentSentenceIndex = dialogue.dialogueParts.Length;
+            isOpen = true;
+        }
+        else if (isOpen)
+        {
+            Debug.Log(currentSentenceIndex);
+            if (dialogue.dialogueParts[dialogueManager.dialogueIndex - 1].question)
+            {
+                return;
+            }
+            dialogueManager.DisplayNextSentence();
+            if (dialogueManager.dialogueIndex > dialogue.dialogueParts.Length)
+            {
+                isOpen = false;
+                if (DialogueEndAction)
+                {
+                    gameObject.SetActive(false);
+                    if (npc)
+                    {
+                        npcAlert.SetActive(false);
+                    }
+                    dialogueEndAction.ExecuteAction(endAction);
+                }
+            }
         }
     }
 }

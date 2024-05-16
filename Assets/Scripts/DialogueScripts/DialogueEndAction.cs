@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class DialogueEndAction : MonoBehaviour
 {
-   private PostProcessing postProcessing;
+    private PostProcessing postProcessing;
+    private AudioManager audioManager;
 
     void Start()
     {
         postProcessing = FindObjectOfType<PostProcessing>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public void ExecuteAction(string action)
@@ -40,6 +42,10 @@ public class DialogueEndAction : MonoBehaviour
             case "Increase Purple":
                 Debug.Log("Increasing purple saturation");
                 postProcessing.IncreasePurpleSaturation();
+                break;
+            case "Stop Music":
+                Debug.Log("Stopping music");
+                audioManager.StopAudio("BackgroundMusic");
                 break;
             default:
                 break;

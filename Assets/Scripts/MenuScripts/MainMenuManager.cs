@@ -15,7 +15,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("BedroomScene");
+        SceneManager.LoadScene("TutorialScene");
     }
 
     public void OpenSettings()
