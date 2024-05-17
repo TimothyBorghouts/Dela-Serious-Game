@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    public GameObject ContinueButton;
     public GameObject ChoiceBox;
 
     public TextMeshProUGUI choice1;
@@ -25,20 +26,19 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        audioManager = FindAnyObjectByType<AudioManager>();
         nameQueue = new Queue<string>();
         sentenceQueue = new Queue<DialoguePart>();
-        dialogueIndex = 0;
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        dialogueIndex = 0;
         audioManager.StopAudio("Phone");
         dialogueAnimator.SetBool("IsOpen", true);
         Playeranimator.SetBool("IsTalking" ,true);
         sentenceQueue.Clear();
         nameQueue.Clear();
-        dialogueIndex = 0;
 
         for (int i = 0; i < dialogue.dialogueParts.Length; i++)
         {
@@ -51,25 +51,33 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence(int answer = 0)
     {
-        dialogueIndex++;
         ChoiceBox.SetActive(false);
-        
+
         if (sentenceQueue.Count == 0)
         {
             EndDialogue();
             return;
         }
 
-        //ChoiceBox.SetActive(false);
         DialoguePart dialoguePart = sentenceQueue.Dequeue();
         nameText.text = nameQueue.Dequeue();
+
+        dialogueIndex++;
+
         StopAllCoroutines();
 
-        StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
         if (dialoguePart.question)
         {
             DisplayChoices(dialoguePart);
+            ContinueButton.SetActive(false);
         }
+        else
+        {
+            ContinueButton.SetActive(true);
+        }
+
+        StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
+        
     }
 
     IEnumerator TypeSentence(string sentence)
