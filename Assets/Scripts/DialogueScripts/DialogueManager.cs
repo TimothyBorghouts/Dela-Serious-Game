@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
@@ -18,11 +19,13 @@ public class DialogueManager : MonoBehaviour
 
     public Animator dialogueAnimator;
     public Animator Playeranimator;
+
+    public bool endOfDialogue;
     
     private AudioManager audioManager;
 
-    private Queue<string> nameQueue;
-    private Queue<DialoguePart> sentenceQueue;
+    protected Queue<string> nameQueue;
+    protected Queue<DialoguePart> sentenceQueue;
 
     void Start()
     {
@@ -33,10 +36,11 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        dialogueIndex = 0;
-        audioManager.StopAudio("Phone");
+        Playeranimator.SetBool("IsMoving", false);
+        Playeranimator.SetBool("IsTalking", true);
         dialogueAnimator.SetBool("IsOpen", true);
-        Playeranimator.SetBool("IsTalking" ,true);
+
+        dialogueIndex = 0;
         sentenceQueue.Clear();
         nameQueue.Clear();
 
@@ -52,7 +56,6 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence(int answer = 0)
     {
         ChoiceBox.SetActive(false);
-
         if (sentenceQueue.Count == 0)
         {
             EndDialogue();
@@ -61,11 +64,18 @@ public class DialogueManager : MonoBehaviour
 
         DialoguePart dialoguePart = sentenceQueue.Dequeue();
         nameText.text = nameQueue.Dequeue();
+        if (nameText.text == "You")
+        {
+            nameText.horizontalAlignment = HorizontalAlignmentOptions.Right;
+        }
+        else
+        {
+            nameText.horizontalAlignment= HorizontalAlignmentOptions.Left;
+        }
 
         dialogueIndex++;
-
+        
         StopAllCoroutines();
-
         if (dialoguePart.question)
         {
             DisplayChoices(dialoguePart);
@@ -76,50 +86,36 @@ public class DialogueManager : MonoBehaviour
             ContinueButton.SetActive(true);
         }
 
-        PickUp(dialoguePart.possibleSentences[answer]);
         StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
+
+        //StartCoroutine(TypeSentence(dialoguePart, answer));
     }
 
-    private void PickUp(string sentence)
-    {
-        switch (sentence)
-        {
-            case "I'll take them with me.": // frog
-                Debug.Log("Picking up the frog");
-                DeleteItem(1);
-                break;
-            case "I'll take the rock with me.": // rock
-                Debug.Log("Picking up the rock");
-                DeleteItem(2);
-                break;
-            case "I'll take some apples with me.": // apple
-                Debug.Log("Picking up some apples.");
-                DeleteItem(3);
-                break;
-        }
-    }
+    // // Alternative for making sure choices and continue button only show up when all the dialogue is shown
+    //private IEnumerator TypeSentence(DialoguePart dialoguePart, int answer)
+    //{
+    //    audioManager.PlaySound("DialogueSound");
 
-    private void DeleteItem(int item)
-    {
-        StoryForestManager manager = FindAnyObjectByType<StoryForestManager>();
-        if (manager != null)
-        {
-            if (item == 1)
-            {
-                manager.RemoveFrog();
-            }
-            else if (item == 2)
-            {
-                manager.RemoveRock();
-            }
-            else if (item == 3)
-            {
-                manager.RemoveApple();
-            }
-        }
-    }
+    //    dialogueText.text = "";
+    //    string sentence = dialoguePart.possibleSentences[answer];
+    //    foreach (char letter in sentence.ToCharArray())
+    //    {
+    //        dialogueText.text += letter;
+    //        yield return new WaitForSeconds(0.020f);
+    //    }
+    //    audioManager.StopAudio("DialogueSound");
 
-    IEnumerator TypeSentence(string sentence)
+    //    if (dialoguePart.question)
+    //    {
+    //        DisplayChoices(dialoguePart);
+    //    }
+    //    else
+    //    {
+    //        ContinueButton.SetActive(true);
+    //    }
+    //}
+
+    private IEnumerator TypeSentence(string sentence)
     {
         audioManager.PlaySound("DialogueSound");
         dialogueText.text = "";
@@ -131,7 +127,7 @@ public class DialogueManager : MonoBehaviour
         audioManager.StopAudio("DialogueSound");
     }
 
-    void EndDialogue()
+    protected void EndDialogue()
     {
         dialogueAnimator.SetBool("IsOpen", false);
         Playeranimator.SetBool("IsTalking", false);

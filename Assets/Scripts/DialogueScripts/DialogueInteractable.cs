@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DialogueInteractable : MonoBehaviour
 {
-    private bool isInRange;
+    protected bool isInRange;
     private bool isDialogueOpen;
 
     public DialogueManager dialogueManager;
@@ -41,7 +41,7 @@ public class DialogueInteractable : MonoBehaviour
     //3. Check if the player presses E, Enter, F, Space or Z to interact with the npc
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z))
+        if (InputManager.GetInteraction())
         {
             if (isInRange)
             {
@@ -60,11 +60,8 @@ public class DialogueInteractable : MonoBehaviour
     }
 
     //5. Check if the player is already in a dialogue with the npc or should continue a dialogue
-    private void HandleDialogueInteraction()
+    protected void HandleDialogueInteraction()
     {
-        Debug.Log("Dialoge current Index: " + dialogueManager.dialogueIndex);
-        Debug.Log("Dialogue total parts: " + dialogue.dialogueParts.Length);
-
         if (!isDialogueOpen)
         {
             StartDialogue();
@@ -85,12 +82,8 @@ public class DialogueInteractable : MonoBehaviour
     //7. Continue the dialogue with the npc
     public void ContinueDialogue()
     {
-
         if (dialogueManager.dialogueIndex >= dialogue.dialogueParts.Length)
         {
-            Debug.Log("End of dialogue");
-            Debug.Log("End Dialogue Index: " + dialogueManager.dialogueIndex);
-            Debug.Log("End Dialogue Parts: " + dialogue.dialogueParts.Length);
             EndDialogue();
         }
 

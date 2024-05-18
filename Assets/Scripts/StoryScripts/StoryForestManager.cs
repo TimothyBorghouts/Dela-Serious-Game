@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
@@ -13,7 +14,9 @@ public class StoryForestManager : MonoBehaviour
     public DialogueInteractable IndigoEndDialogueInteractable;
 
     public GameObject HintBox;
-    private bool hintBoxShown = false;
+    public TextMeshProUGUI HintText;
+    private bool IndigoQuestHint = false;
+    private bool IndigoQuestEnd = false;
 
     public GameObject Apple;
     public GameObject Frog;
@@ -36,34 +39,43 @@ public class StoryForestManager : MonoBehaviour
     {
         if (!IndigoIntroDialogue.activeSelf)
         {
-            if (!hintBoxShown)
+            if (!IndigoQuestHint)
             {
-                hintBoxShown = true;
-                StartCoroutine(ShowHint());
-                //StopAllCoroutines();
+                IndigoQuestHint = true;
+                StartCoroutine(ShowHint("Maybe I could find something to talk about?"));
             }
             if (Apple.activeSelf && Frog.activeSelf && Rock.activeSelf)
             {
                 // player hasnt picked anything up yet
                 return;
             }
-            else
+            else if (!IndigoQuestEnd)
             {
                 IndigoEndDialogue.SetActive(true);
+                IndigoQuestEnd = true;
             }
+        }
+
+        if (!IndigoEndDialogue.activeSelf && IndigoQuestEnd)
+        {
+            StartCoroutine(ShowHint("Oh… I didn’t notice the flowers were so pretty..."));
+            IndigoEndDialogue.SetActive(false);
+            IndigoQuestEnd = false;
         }
     }
 
-    IEnumerator ShowHint()
+    IEnumerator ShowHint(string text)
     {
         HintBox.SetActive(true);
+        HintText.text = "";
 
-        //foreach (char letter in sentence.ToCharArray())
-        //{
-        //    dialogueText.text += letter;
-            
-        //}
-        yield return new WaitForSeconds(10f);
+        foreach (char letter in text.ToCharArray())
+        {
+            HintText.text += letter;
+            yield return new WaitForSeconds(0.020f);
+        }
+
+        yield return new WaitForSeconds(5f);
         HintBox.SetActive(false);
     }
 
@@ -171,7 +183,7 @@ public class StoryForestManager : MonoBehaviour
     public void RemoveRock()
     {
         Rock.SetActive(false);
-        frogParts = new DialoguePart[]
+        rockParts = new DialoguePart[]
         {
             new DialoguePart()
             {

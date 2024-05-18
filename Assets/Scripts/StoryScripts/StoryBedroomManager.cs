@@ -3,8 +3,9 @@ using UnityEngine;
 public class StoryBedroomManager : MonoBehaviour
 {
     public GameObject livingroomCollider;
-    public GameObject PhoneCollider;
+    public GameObject phoneCollider;
     public GameObject messageCollider;
+    public GameObject closetInteractable;
     private bool isActive;
 
     public DialogueManager dialogueManager;
@@ -14,8 +15,9 @@ public class StoryBedroomManager : MonoBehaviour
     {
         if (!isActive)
         {
-            if (!PhoneCollider.activeSelf)
+            if (!phoneCollider.activeSelf)
             {
+                closetInteractable.SetActive(true);
                 livingroomCollider.SetActive(true);
                 messageCollider.SetActive(false);
             }

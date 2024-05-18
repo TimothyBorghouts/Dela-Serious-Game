@@ -1,10 +1,13 @@
+using Cinemachine;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class DialogueEndAction : MonoBehaviour
 {
     private PostProcessing postProcessing;
     private AudioManager audioManager;
     public ScreenShaker screenShaker;
+    private StoryForestManager storyForestManager;
 
     void Start()
     {
@@ -20,6 +23,10 @@ public class DialogueEndAction : MonoBehaviour
                 Debug.Log("Removing saturation");
                 postProcessing.AddKeysToHue();
                 screenShaker.TriggerShake();
+                audioManager.StopAudio("BackgroundMusic");
+
+                GameObject shake = GameObject.FindGameObjectWithTag("ShakeSource");
+                CameraShakeManager.instance.CameraShake(shake.GetComponent<CinemachineImpulseSource>());
                 break;
             case "Increase Red":
                 Debug.Log("Increasing red saturation");
@@ -59,6 +66,30 @@ public class DialogueEndAction : MonoBehaviour
                 Debug.Log("Initiating Indigo walking left");
                 Walker walker = FindObjectOfType<Walker>();
                 walker.isMovingLeft = true;
+                break;
+            case "Pick Up Frog":
+                Debug.Log("Picking up Frog");
+                if (storyForestManager is null)
+                {
+                    storyForestManager = FindAnyObjectByType<StoryForestManager>();
+                }
+                storyForestManager.RemoveFrog();
+                break;
+            case "Pick Up Rock":
+                Debug.Log("Picking up Rock");
+                if (storyForestManager is null)
+                {
+                    storyForestManager = FindAnyObjectByType<StoryForestManager>();
+                }
+                storyForestManager.RemoveRock();
+                break;
+            case "Pick Up Apples":
+                Debug.Log("Picking up Apples");
+                if (storyForestManager is null)
+                {
+                    storyForestManager = FindAnyObjectByType<StoryForestManager>();
+                }
+                storyForestManager.RemoveApple();
                 break;
             default:
                 break;
