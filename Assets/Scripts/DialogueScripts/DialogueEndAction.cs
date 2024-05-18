@@ -55,6 +55,11 @@ public class DialogueEndAction : MonoBehaviour
                 Debug.Log("Stopping music");
                 audioManager.StopAudio("BackgroundMusic");
                 break;
+            case "Indigo Walk Left":
+                Debug.Log("Initiating Indigo walking left");
+                Walker walker = FindObjectOfType<Walker>();
+                walker.isMovingLeft = true;
+                break;
             default:
                 break;
         }

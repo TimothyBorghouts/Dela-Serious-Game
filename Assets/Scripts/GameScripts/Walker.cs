@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Walker : MonoBehaviour
 {
-    public float walkingSpeed = 7f;
-    public float moveDistance = 5f;
+    public float walkingSpeed;
+    public float moveDistance;
 
     public Animator animator;
     private float startPositionX;
     public bool isMovingLeft;
+
+    public bool dialogueIsFinished = false;
 
     void Start()
     {
@@ -18,18 +20,17 @@ public class Walker : MonoBehaviour
 
     void Update()
     {
-
         var currentPositionX = transform.position.x;
 
         if (isMovingLeft && currentPositionX <= startPositionX - moveDistance)
         {
-            animator.SetBool("Walks",false);
+            animator.SetBool("Walks", false);
             isMovingLeft = false;
         }
 
         if (isMovingLeft)
         {
-            animator.SetBool("Walks",true);
+            animator.SetBool("Walks", true);
             transform.Translate(Vector2.left * (walkingSpeed * Time.deltaTime));
         }
     }

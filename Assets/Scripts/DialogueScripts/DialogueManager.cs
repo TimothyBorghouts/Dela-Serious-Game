@@ -76,8 +76,47 @@ public class DialogueManager : MonoBehaviour
             ContinueButton.SetActive(true);
         }
 
+        PickUp(dialoguePart.possibleSentences[answer]);
         StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
-        
+    }
+
+    private void PickUp(string sentence)
+    {
+        switch (sentence)
+        {
+            case "I'll take them with me.": // frog
+                Debug.Log("Picking up the frog");
+                DeleteItem(1);
+                break;
+            case "I'll take the rock with me.": // rock
+                Debug.Log("Picking up the rock");
+                DeleteItem(2);
+                break;
+            case "I'll take some apples with me.": // apple
+                Debug.Log("Picking up some apples.");
+                DeleteItem(3);
+                break;
+        }
+    }
+
+    private void DeleteItem(int item)
+    {
+        StoryForestManager manager = FindAnyObjectByType<StoryForestManager>();
+        if (manager != null)
+        {
+            if (item == 1)
+            {
+                manager.RemoveFrog();
+            }
+            else if (item == 2)
+            {
+                manager.RemoveRock();
+            }
+            else if (item == 3)
+            {
+                manager.RemoveApple();
+            }
+        }
     }
 
     IEnumerator TypeSentence(string sentence)
