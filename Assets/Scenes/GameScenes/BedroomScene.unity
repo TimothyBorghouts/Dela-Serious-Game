@@ -1992,6 +1992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCDialogueCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 3919072205454691910, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5130407451014361403, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Size.x
       value: 3
