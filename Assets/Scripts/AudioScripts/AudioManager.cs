@@ -22,8 +22,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-
     }
 
     void Start()
@@ -52,7 +50,6 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(string name)
     {
         Sound sound = FindSound(name);
-
         if (!sound.source.isPlaying)
         {
             sound.source.outputAudioMixerGroup = MusicMixerGroup;

@@ -14,7 +14,7 @@ public class AudioInteractable : MonoBehaviour
 
     }
 
-    public void stop()
+    public void Stop()
     {
         audioManager.StopAudio("Phone");
     }

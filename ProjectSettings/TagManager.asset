@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bedroomdoor
+  - Livingroomdoor
+  - ShakeSource
   layers:
   - Default
   - TransparentFX
@@ -11,7 +14,7 @@ TagManager:
   - PostProcessing
   - Water
   - UI
-  - 
+  - UITOP
   - 
   - 
   - 
@@ -68,6 +71,18 @@ TagManager:
   - name: Ground2
     uniqueID: 154800525
     locked: 0
+  - name: Ground3
+    uniqueID: 2317053265
+    locked: 0
+  - name: Ground4
+    uniqueID: 3121453657
+    locked: 0
+  - name: Ground5
+    uniqueID: 3374979145
+    locked: 0
+  - name: Ground6
+    uniqueID: 694368149
+    locked: 0
   - name: Trees
     uniqueID: 866222285
     locked: 0
@@ -85,4 +100,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3031298829
+    locked: 0
+  - name: Front
+    uniqueID: 3010905417
     locked: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    public GameObject ContinueButton;
     public GameObject ChoiceBox;
 
     public TextMeshProUGUI choice1;
@@ -17,28 +19,30 @@ public class DialogueManager : MonoBehaviour
 
     public Animator dialogueAnimator;
     public Animator Playeranimator;
+
+    public bool endOfDialogue;
     
     private AudioManager audioManager;
 
-    private Queue<string> nameQueue;
-    private Queue<DialoguePart> sentenceQueue;
+    protected Queue<string> nameQueue;
+    protected Queue<DialoguePart> sentenceQueue;
 
     void Start()
     {
-        audioManager = FindAnyObjectByType<AudioManager>();
         nameQueue = new Queue<string>();
         sentenceQueue = new Queue<DialoguePart>();
-        dialogueIndex = 0;
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        audioManager.StopAudio("Phone");
+        Playeranimator.SetBool("IsMoving", false);
+        Playeranimator.SetBool("IsTalking", true);
         dialogueAnimator.SetBool("IsOpen", true);
-        Playeranimator.SetBool("IsTalking" ,true);
+
+        dialogueIndex = 0;
         sentenceQueue.Clear();
         nameQueue.Clear();
-        dialogueIndex = 0;
 
         for (int i = 0; i < dialogue.dialogueParts.Length; i++)
         {
@@ -51,6 +55,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence(int answer = 0)
     {
+        ChoiceBox.SetActive(false);
         if (sentenceQueue.Count == 0)
         {
             EndDialogue();
@@ -59,18 +64,58 @@ public class DialogueManager : MonoBehaviour
 
         DialoguePart dialoguePart = sentenceQueue.Dequeue();
         nameText.text = nameQueue.Dequeue();
-        dialogueIndex++;
-        StopAllCoroutines();
+        if (nameText.text == "You")
+        {
+            nameText.horizontalAlignment = HorizontalAlignmentOptions.Right;
+        }
+        else
+        {
+            nameText.horizontalAlignment= HorizontalAlignmentOptions.Left;
+        }
 
-        StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
-        ChoiceBox.SetActive(false);
+        dialogueIndex++;
+        
+        StopAllCoroutines();
         if (dialoguePart.question)
         {
-            DisplayQuestion(dialoguePart);
+            DisplayChoices(dialoguePart);
+            ContinueButton.SetActive(false);
         }
+        else
+        {
+            ContinueButton.SetActive(true);
+        }
+
+        StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
+
+        //StartCoroutine(TypeSentence(dialoguePart, answer));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    // // Alternative for making sure choices and continue button only show up when all the dialogue is shown
+    //private IEnumerator TypeSentence(DialoguePart dialoguePart, int answer)
+    //{
+    //    audioManager.PlaySound("DialogueSound");
+
+    //    dialogueText.text = "";
+    //    string sentence = dialoguePart.possibleSentences[answer];
+    //    foreach (char letter in sentence.ToCharArray())
+    //    {
+    //        dialogueText.text += letter;
+    //        yield return new WaitForSeconds(0.020f);
+    //    }
+    //    audioManager.StopAudio("DialogueSound");
+
+    //    if (dialoguePart.question)
+    //    {
+    //        DisplayChoices(dialoguePart);
+    //    }
+    //    else
+    //    {
+    //        ContinueButton.SetActive(true);
+    //    }
+    //}
+
+    private IEnumerator TypeSentence(string sentence)
     {
         audioManager.PlaySound("DialogueSound");
         dialogueText.text = "";
@@ -82,7 +127,7 @@ public class DialogueManager : MonoBehaviour
         audioManager.StopAudio("DialogueSound");
     }
 
-    void EndDialogue()
+    protected void EndDialogue()
     {
         dialogueAnimator.SetBool("IsOpen", false);
         Playeranimator.SetBool("IsTalking", false);
@@ -90,7 +135,6 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayQuestion(DialoguePart dialoguePart)
     {
-        ChoiceBox.SetActive(true);
         DisplayChoices(dialoguePart);
     }
 

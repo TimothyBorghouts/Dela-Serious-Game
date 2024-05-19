@@ -242,8 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 4499560835896060991, guid: 2f4a4b9c985a90e4394ca440568f2a65, type: 3}
   dialogue:
-    sentences: []
-    names: []
+    dialogueParts: []
   DialogueEndAction: 0
   dialogueEndAction: {fileID: 0}
   endAction: 
@@ -320,8 +319,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1634464573
-  m_SortingLayer: 14
+  m_SortingLayerID: -1284061879
+  m_SortingLayer: 20
   m_SortingOrder: 0
   m_Sprite: {fileID: -1308620118, guid: b339eb15d5e3a4b4ebc434d29c87bef9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
