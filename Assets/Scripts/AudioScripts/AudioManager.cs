@@ -50,12 +50,10 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(string name)
     {
         Sound sound = FindSound(name);
-        Debug.Log(sound);
         if (!sound.source.isPlaying)
         {
             sound.source.outputAudioMixerGroup = MusicMixerGroup;
             sound.source.Play();
-            Debug.Log(sound.volume);
         }
     }
 
