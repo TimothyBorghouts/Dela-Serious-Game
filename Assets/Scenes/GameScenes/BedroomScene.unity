@@ -915,11 +915,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.42
+      value: -5.42
       objectReference: {fileID: 0}
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.47
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1093,6 +1093,7 @@ MonoBehaviour:
   Transition: {fileID: 1213236331}
   sceneName: LivingroomScene
   playerPosition: {x: 3.5, y: 0.75}
+  LongFadeOut: 0
 --- !u!1001 &722798382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5662,11 +5663,11 @@ PrefabInstance:
       objectReference: {fileID: 1923053249}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.42
+      value: -5.42
       objectReference: {fileID: 0}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.47
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.z
