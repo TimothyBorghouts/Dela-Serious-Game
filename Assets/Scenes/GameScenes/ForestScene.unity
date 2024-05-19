@@ -9197,7 +9197,7 @@ PrefabInstance:
     - target: {fileID: 1494630961198687337, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: screenShaker
       value: 
-      objectReference: {fileID: 234997361}
+      objectReference: {fileID: 0}
     - target: {fileID: 2022215897100142383, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: choice1
       value: 
@@ -9317,17 +9317,14 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3876101501781705986, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1332184385}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7402760512862510347, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 234997361}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
 --- !u!114 &234997357 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1494630961198687337, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
   m_PrefabInstance: {fileID: 234997356}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234997360}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f470bf7f93b39744af775c9f5373f2c, type: 3}
@@ -9349,26 +9346,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3876101501781705986, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
   m_PrefabInstance: {fileID: 234997356}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &234997360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7402760512862510347, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
-  m_PrefabInstance: {fileID: 234997356}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &234997361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234997360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f92716e2693276643915dfd8442dac5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 1748908802}
-  shakeDuration: 0.5
-  shakeMagnitude: 0.2
 --- !u!1 &241340478
 GameObject:
   m_ObjectHideFlags: 0
@@ -19430,11 +19407,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
---- !u!4 &1748908802 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3537449757562951094, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
-  m_PrefabInstance: {fileID: 1748908801}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1762985546
 GameObject:
   m_ObjectHideFlags: 0

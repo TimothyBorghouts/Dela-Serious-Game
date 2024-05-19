@@ -87,13 +87,10 @@ public class DialogueInteractable : MonoBehaviour
             EndDialogue();
         }
 
-        //if(dialogue.dialogueParts.Length >= dialogueManager.dialogueIndex)
-        //{
-            if (dialogue.dialogueParts[dialogueManager.dialogueIndex - 1].question)
-            {
-                return;
-            }
-        //}  
+        if (dialogue.dialogueParts[dialogueManager.dialogueIndex - 1].question)
+        {
+            return;
+        }
 
         dialogueManager.DisplayNextSentence();
     }
