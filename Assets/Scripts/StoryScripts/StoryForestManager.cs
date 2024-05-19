@@ -22,6 +22,10 @@ public class StoryForestManager : MonoBehaviour
     public GameObject Frog;
     public GameObject Rock;
 
+    public GameObject AppleBubble;
+    public GameObject FrogBubble;
+    public GameObject RockBubble;
+
     private DialoguePart[] appleParts = { };
     private DialoguePart[] frogParts = { };
     private DialoguePart[] rockParts = { };
@@ -43,6 +47,7 @@ public class StoryForestManager : MonoBehaviour
             {
                 IndigoQuestHint = true;
                 StartCoroutine(ShowHint("Maybe I could find something to talk about?"));
+                ToggleBubbles(true);
             }
             if (Apple.activeSelf && Frog.activeSelf && Rock.activeSelf)
             {
@@ -60,8 +65,16 @@ public class StoryForestManager : MonoBehaviour
         {
             StartCoroutine(ShowHint("Oh… I didn’t notice the flowers were so pretty..."));
             IndigoEndDialogue.SetActive(false);
+            ToggleBubbles(false);
             IndigoQuestEnd = false;
         }
+    }
+
+    private void ToggleBubbles(bool b)
+    {
+        AppleBubble.SetActive(b);
+        FrogBubble.SetActive(b);
+        RockBubble.SetActive(b);
     }
 
     IEnumerator ShowHint(string text)
