@@ -9755,7 +9755,7 @@ PrefabInstance:
       objectReference: {fileID: 234997357}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].name
@@ -9766,28 +9766,32 @@ PrefabInstance:
       value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
-      propertyPath: dialogue.dialogueParts.Array.data[0].question
-      value: 1
+      propertyPath: dialogue.dialogueParts.Array.data[2].name
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
-      propertyPath: dialogue.dialogueParts.Array.data[1].question
+      propertyPath: dialogue.dialogueParts.Array.data[0].question
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: dialogue.dialogueParts.Array.data[1].question
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleAnswerA
-      value: Neem de steen mee.
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleAnswerB
-      value: Laat de steen liggen.
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleAnswerA
-      value: 
+      value: Neem de steen mee.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleAnswerB
-      value: 
+      value: Laat de steen liggen.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.size
@@ -9795,6 +9799,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
@@ -9804,10 +9812,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[0]
-      value: Ik neem de steen mee.
+      value: Zal ik de steen meenemen?
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[1]
+      value: Ik laat de steen liggen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.data[0]
+      value: Ik neem de steen mee.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.data[1]
       value: Ik laat de steen liggen.
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
@@ -10387,6 +10403,7 @@ MonoBehaviour:
   endAction: Increase Purple
   npc: 1
   npcAlert: {fileID: 782750608}
+  DialogueCoolDown: 0
 --- !u!1 &760818581
 GameObject:
   m_ObjectHideFlags: 0
@@ -10845,7 +10862,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transition: {fileID: 932495806}
   sceneName: OutsideScene
-  playerPosition: {x: 3.5, y: 0.75}
   LongFadeOut: 0
 --- !u!61 &951441262
 BoxCollider2D:
@@ -19535,7 +19551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Doorgaan >>>
+  m_text: Volgende >>>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a58a81f77550f74c9cff3d1400c7d22, type: 2}
   m_sharedMaterial: {fileID: -2292616581032128979, guid: 2a58a81f77550f74c9cff3d1400c7d22, type: 2}

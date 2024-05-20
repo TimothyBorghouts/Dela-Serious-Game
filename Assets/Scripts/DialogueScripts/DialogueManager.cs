@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     public bool endOfDialogue;
     
     private AudioManager audioManager;
+    private PlayerController playerController;
 
     protected Queue<string> nameQueue;
     protected Queue<DialoguePart> sentenceQueue;
@@ -31,6 +32,7 @@ public class DialogueManager : MonoBehaviour
         nameQueue = new Queue<string>();
         sentenceQueue = new Queue<DialoguePart>();
         audioManager = FindAnyObjectByType<AudioManager>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -38,6 +40,8 @@ public class DialogueManager : MonoBehaviour
         Playeranimator.SetBool("IsMoving", false);
         Playeranimator.SetBool("IsTalking", true);
         dialogueAnimator.SetBool("IsOpen", true);
+
+        playerController.canMove = false;
 
         dialogueIndex = 0;
         sentenceQueue.Clear();
@@ -54,6 +58,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence(int answer = 0)
     {
+
         ChoiceBox.SetActive(false);
         if (sentenceQueue.Count == 0)
         {
@@ -75,42 +80,19 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex++;
         
         StopAllCoroutines();
+
         if (dialoguePart.question)
         {
             DisplayChoices(dialoguePart);
+            StartCoroutine(HideOptionButtons(dialoguePart.possibleSentences[answer]));
             ContinueButton.SetActive(false);
-        }
-        else
+        } else
         {
-            ContinueButton.SetActive(true);
+            StartCoroutine(HideContinueButton(dialoguePart.possibleSentences[answer]));
         }
 
         StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
     }
-
-    // // Alternative for making sure choices and continue button only show up when all the dialogue is shown
-    //private IEnumerator TypeSentence(DialoguePart dialoguePart, int answer)
-    //{
-    //    audioManager.PlaySound("DialogueSound");
-
-    //    dialogueText.text = "";
-    //    string sentence = dialoguePart.possibleSentences[answer];
-    //    foreach (char letter in sentence.ToCharArray())
-    //    {
-    //        dialogueText.text += letter;
-    //        yield return new WaitForSeconds(0.020f);
-    //    }
-    //    audioManager.StopAudio("DialogueSound");
-
-    //    if (dialoguePart.question)
-    //    {
-    //        DisplayChoices(dialoguePart);
-    //    }
-    //    else
-    //    {
-    //        ContinueButton.SetActive(true);
-    //    }
-    //}
 
     private IEnumerator TypeSentence(string sentence)
     {
@@ -119,13 +101,28 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.020f);
+            yield return new WaitForSeconds(0.025f);
         }
         audioManager.StopAudio("DialogueSound");
     }
 
+    IEnumerator HideContinueButton(string sentence)
+    {   
+        ContinueButton.SetActive(false);
+        yield return new WaitForSeconds(0.025f * sentence.Length + 0.2f);
+        ContinueButton.SetActive(true);
+    }
+
+    IEnumerator HideOptionButtons(string sentence)
+    {
+        ChoiceBox.SetActive(false);
+        yield return new WaitForSeconds(0.025f * sentence.Length + 0.2f);
+        ChoiceBox.SetActive(true);
+    }
+
     protected void EndDialogue()
     {
+        playerController.canMove = true;
         dialogueAnimator.SetBool("IsOpen", false);
         Playeranimator.SetBool("IsTalking", false);
     }

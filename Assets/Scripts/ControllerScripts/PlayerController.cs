@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     public float walkSpeed;
 
+    public bool canMove = true;
+
     private AudioManager audioManager;
 
     void Start()
@@ -17,13 +19,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {     
-        playerAnimator.SetFloat("Horizontal", moveInput.x);
-        playerAnimator.SetFloat("Vertical", moveInput.y);
-
-        if (playerAnimator.GetBool("IsTalking"))
+        if(!canMove)
         {
+            rigidBody.velocity = Vector2.zero;
             return;
         }
+
+        playerAnimator.SetFloat("Horizontal", moveInput.x);
+        playerAnimator.SetFloat("Vertical", moveInput.y);
 
         rigidBody.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);
 

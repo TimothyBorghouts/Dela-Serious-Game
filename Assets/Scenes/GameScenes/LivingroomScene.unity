@@ -2725,7 +2725,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transition: {fileID: 1152540025}
   sceneName: BedroomScene
-  playerPosition: {x: 3.5, y: 0.75}
   LongFadeOut: 0
 --- !u!1 &613476272
 GameObject:
@@ -3519,6 +3518,10 @@ PrefabInstance:
       propertyPath: dialogue.dialogueParts.Array.data[8].possibleSentences.Array.data[0]
       value: Ik ook niet...
       objectReference: {fileID: 0}
+    - target: {fileID: 7112661801711002766, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1949978815, guid: b339eb15d5e3a4b4ebc434d29c87bef9, type: 3}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2
@@ -3692,13 +3695,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2556947675168821748, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299965243867929714, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.02
+      objectReference: {fileID: 0}
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1648480600, guid: d75c6611b5b21854a82bdb9dbea712bf, type: 3}
+      objectReference: {fileID: 1261446414, guid: 230480daffbff33449e577fe35ca064b, type: 3}
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SortingLayer
-      value: 14
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SortingLayerID
@@ -3706,15 +3717,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5986884703465721180, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.840514
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 5986884703465721180, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8819356
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 5986884703465721180, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.016243748
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5986884703465721180, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3870,23 +3881,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[3].possibleSentences.Array.data[0]
-      value: Ik denk dat ik vanavond pasta voor ons ga maken, jouw favoriet!
+      value: Ik denk dat ik vanavond pasta voor ons ga maken, je favoriet!
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[4].possibleSentences.Array.data[0]
       value: Bedankt, dat waardeer ik.
       objectReference: {fileID: 0}
+    - target: {fileID: 6759108115396524132, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112661801711002766, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1949978815, guid: b339eb15d5e3a4b4ebc434d29c87bef9, type: 3}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Size.y
-      value: 1.6842775
+      value: 1.8387628
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Offset.y
-      value: -0.34213877
+      value: 1.2693756
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2
+      value: 2.1875
       objectReference: {fileID: 0}
     - target: {fileID: 8741714200349198411, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_IsActive
@@ -6758,7 +6785,7 @@ MonoBehaviour:
     - name: You
       question: 0
       possibleSentences:
-      - Ik zou niet weg moeten gaan voordat ik met mama heb gesproken.
+      - Ik zou niet weg moeten gaan voordat ik met Sage heb gesproken.
       possibleAnswerA: 
       possibleAnswerB: 
   DialogueEndAction: 0
@@ -6766,6 +6793,7 @@ MonoBehaviour:
   endAction: 
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!61 &1903313885
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6918,7 +6946,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transition: {fileID: 1152540025}
   sceneName: OutsideScene
-  playerPosition: {x: 0, y: 0}
   LongFadeOut: 0
 --- !u!1 &2135415187
 GameObject:

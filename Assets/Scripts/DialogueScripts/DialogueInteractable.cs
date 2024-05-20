@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class DialogueInteractable : MonoBehaviour
@@ -14,6 +13,8 @@ public class DialogueInteractable : MonoBehaviour
     public string endAction;
     public bool npc;
     public GameObject npcAlert;
+
+    public bool DialogueCoolDown;
 
     //1. Check if player is in the range of the npc
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,16 +51,7 @@ public class DialogueInteractable : MonoBehaviour
         }
     }
 
-    //4. Check if the player clicks on the npc to interact with the npc
-    public void OnMouseDown()
-    {
-        if (isInRange)
-        {
-            HandleDialogueInteraction();
-        }
-    }
-
-    //5. Check if the player is already in a dialogue with the npc or should continue a dialogue
+    //4. Check if the player is already in a dialogue with the npc or should continue a dialogue
     protected void HandleDialogueInteraction()
     {
         if (!isDialogueOpen)
@@ -72,14 +64,14 @@ public class DialogueInteractable : MonoBehaviour
         }
     }
 
-    //6. Start the dialogue with the npc
+    //5. Start the dialogue with the npc
     private void StartDialogue()
     {
         dialogueManager.StartDialogue(dialogue);
         isDialogueOpen = true;
     }
 
-    //7. Continue the dialogue with the npc
+    //6. Continue the dialogue with the npc
     public void ContinueDialogue()
     {
         if (dialogueManager.dialogueIndex >= dialogue.dialogueParts.Length)
@@ -95,7 +87,7 @@ public class DialogueInteractable : MonoBehaviour
         dialogueManager.DisplayNextSentence();
     }
 
-    //8. End the dialogue with the npc
+    //7. End the dialogue with the npc
     private void EndDialogue()
     {
         isDialogueOpen = false;

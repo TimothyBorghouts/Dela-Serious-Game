@@ -1092,7 +1092,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transition: {fileID: 1213236331}
   sceneName: LivingroomScene
-  playerPosition: {x: 3.5, y: 0.75}
   LongFadeOut: 0
 --- !u!1001 &722798382
 PrefabInstance:
@@ -1525,8 +1524,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.06545067}
-  m_Size: {x: 1.8, y: 3.1309013}
+  m_Offset: {x: -0.092285395, y: 0.26109743}
+  m_Size: {x: 1.8425937, y: 3.7839975}
   m_Direction: 0
 --- !u!1 &929176382
 GameObject:
@@ -2808,10 +2807,10 @@ PrefabInstance:
       addedObject: {fileID: 1153369963}
     - targetCorrespondingSourceObject: {fileID: 3919072205454691910, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1212807822}
+      addedObject: {fileID: 1212807823}
     - targetCorrespondingSourceObject: {fileID: 3919072205454691910, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1212807823}
+      addedObject: {fileID: 1212807822}
   m_SourcePrefab: {fileID: 100100000, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
 --- !u!1 &1153369961 stripped
 GameObject:

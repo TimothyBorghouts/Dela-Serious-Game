@@ -182,6 +182,7 @@ MonoBehaviour:
   endAction: Remove Talk Hint
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!61 &17085846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -319,7 +320,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transition: {fileID: 1076566187}
   sceneName: ChromiaScene
-  playerPosition: {x: 0, y: 0}
   LongFadeOut: 1
 --- !u!1 &46304354
 GameObject:
@@ -380,6 +380,7 @@ MonoBehaviour:
   endAction: 
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!61 &46304357
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11968,6 +11969,7 @@ MonoBehaviour:
   endAction: Finish Second Dialogue
   npc: 1
   npcAlert: {fileID: 426216318}
+  DialogueCoolDown: 0
 --- !u!70 &1399954328
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -14139,6 +14141,7 @@ MonoBehaviour:
   endAction: Finish Third Dialogue
   npc: 1
   npcAlert: {fileID: 1144996621}
+  DialogueCoolDown: 0
 --- !u!70 &1838326717
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
