@@ -1474,7 +1474,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1052930926}
   dialogue:
     dialogueParts:
-    - name: JIj
+    - name: Jij
       question: 1
       possibleSentences:
       - Dit is mijn bed. Zal ik weer gaan slapen?
@@ -1492,6 +1492,7 @@ MonoBehaviour:
   endAction: 
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!70 &897687564
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2912,6 +2913,7 @@ MonoBehaviour:
   endAction: Remove Saturation
   npc: 1
   npcAlert: {fileID: 1153369961}
+  DialogueCoolDown: 0
 --- !u!95 &1213236331 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2479050784564531551, guid: 856de667d68d5d94fa13e22585628e08, type: 3}
@@ -3331,6 +3333,7 @@ MonoBehaviour:
   endAction: 
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!1 &1517006773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5471,6 +5474,7 @@ MonoBehaviour:
   endAction: 
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!1001 &2806729626160467407
 PrefabInstance:
   m_ObjectHideFlags: 0

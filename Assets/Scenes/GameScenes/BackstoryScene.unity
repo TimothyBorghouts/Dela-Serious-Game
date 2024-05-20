@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 39015620}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.663632, y: -21.048347, z: 0.13698784}
+  m_LocalPosition: {x: 15.663632, y: -22.04835, z: 0.13698784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1138,7 +1138,7 @@ PrefabInstance:
       objectReference: {fileID: 900767365}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: endAction
-      value: Pick Up Bag
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
@@ -1146,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 1269537123}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: DialogueEndAction
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueEndAction
@@ -11435,8 +11435,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 866222285
-  m_SortingLayer: 14
+  m_SortingLayerID: -1284061879
+  m_SortingLayer: 20
   m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

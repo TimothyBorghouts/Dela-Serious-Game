@@ -49,7 +49,7 @@ public class StoryBackgroundManager : MonoBehaviour
                 FirstBuble.SetActive(false);
 
                 //Activate the second dialogue
-                StartCoroutine(waitBetweenDialogs());
+                StartCoroutine(WaitBetweenDialogs());
                 StartCoroutine(ShowHint("Ik moet Ash volgen voordat ik hem kwijtraak."));
             }
         }
@@ -83,7 +83,7 @@ public class StoryBackgroundManager : MonoBehaviour
         HintBox.SetActive(false);
     }
 
-    IEnumerator waitBetweenDialogs()
+    IEnumerator WaitBetweenDialogs()
     {
         yield return new WaitForSeconds(5f);
         AshSecondDialogue.SetActive(true);
