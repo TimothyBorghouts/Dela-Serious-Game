@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -28,7 +26,6 @@ public class InputManager : MonoBehaviour
             || Input.GetKeyDown(KeyCode.F)
             || Input.GetKeyDown(KeyCode.Space)
             || Input.GetKeyDown(KeyCode.Z) 
-            // || Input.GetMouseButtonDown(0)
             )
         {
             return true;

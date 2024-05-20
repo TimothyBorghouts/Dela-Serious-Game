@@ -5,15 +5,16 @@ public class ScenesManager : MonoBehaviour
 {
     public Animator Transition;
     private AudioManager audioManager;
+    private PlayerController playerController;
 
     public string sceneName;
-    public Vector2 playerPosition;
 
     public bool LongFadeOut;
 
     private void Start()
     {
         audioManager = FindAnyObjectByType<AudioManager>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,12 +23,6 @@ public class ScenesManager : MonoBehaviour
         {
             StartCoroutine(LoadScene(sceneName));
         }
-    }
-
-    public void goToPosition(Vector2 position)
-    {
-        GameObject gameObject = GameObject.FindGameObjectWithTag("Player");
-        gameObject.transform.position = playerPosition;
     }
 
     public void goToScene(string sceneName)
@@ -46,6 +41,7 @@ public class ScenesManager : MonoBehaviour
             Animator playerAnimator = player.GetComponent<Animator>();
             playerAnimator.SetBool("IsMoving", false);
             playerAnimator.SetBool("IsTalking", true);
+            playerController.canMove = false;
         }
 
         if(LongFadeOut)

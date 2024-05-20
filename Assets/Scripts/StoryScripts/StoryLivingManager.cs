@@ -5,6 +5,8 @@ public class StoryLivingManager : MonoBehaviour
     public GameObject outsideCollider;
     public GameObject SageCollider;
     public GameObject messageCollider;
+    public Animator sageAnimator;
+    private bool isIdle = true;
     private bool isActive;
 
     public DialogueManager dialogueManager;
@@ -12,6 +14,11 @@ public class StoryLivingManager : MonoBehaviour
 
     public void Update()
     {
+        if (!SageCollider.activeSelf && isIdle)
+        {
+            sageAnimator.SetBool("IsIdle", false);
+            isIdle = false;
+        }
         if (!isActive)
         {
             if (!SageCollider.activeSelf)

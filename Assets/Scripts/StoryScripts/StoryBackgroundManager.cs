@@ -34,7 +34,7 @@ public class StoryBackgroundManager : MonoBehaviour
     {
         BedroomCollider.SetActive(false);
         MessageCollider.SetActive(true);
-        StartCoroutine(ShowHint("Loop naar Ash toe door te lopen met [w][a][s][d] of de pijltjes toetsen."));
+        StartCoroutine(ShowHint("Loop naar Ash toe met [w] [a] [s] [d] of de pijltjes toetsen."));
         walker = FindObjectOfType<Walker>();
     }
 
@@ -48,11 +48,8 @@ public class StoryBackgroundManager : MonoBehaviour
                 AshFirstDialogue.SetActive(false);
                 FirstBuble.SetActive(false);
 
-                StartCoroutine(waitBetweenDialogs());
-
                 //Activate the second dialogue
-                AshSecondDialogue.SetActive(true);
-                SecondBuble.SetActive(true);
+                StartCoroutine(waitBetweenDialogs());
                 StartCoroutine(ShowHint("Ik moet Ash volgen voordat ik hem kwijtraak."));
             }
         }
@@ -88,19 +85,21 @@ public class StoryBackgroundManager : MonoBehaviour
 
     IEnumerator waitBetweenDialogs()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
+        AshSecondDialogue.SetActive(true);
+        SecondBuble.SetActive(true);
     }
 
     public void FinishSecondDialogue()
     {
-        StartCoroutine(ShowHint("Ik ga de tas van Ash vinden door er naast te staan en op [E] te drukken."));
+        StartCoroutine(ShowHint("Pak de tas van Ash door er naast te staan en op [E] te drukken."));
         BagDialogue.SetActive(true);
         BagBubble.SetActive(true);
     }
 
     public void FinishThirdDialogue()
     {
-        StartCoroutine(ShowHint("Ik ga Ash volgen naar het bos."));
+        StartCoroutine(ShowHint("Volg Ash naar het bos."));
         thirdDialogueEnded = true;
         BedroomCollider.SetActive(true);
         MessageCollider.SetActive(false);
