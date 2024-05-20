@@ -6,6 +6,7 @@ public class DialogueEndAction : MonoBehaviour
     private PostProcessing postProcessing;
     private AudioManager audioManager;
     private StoryForestManager storyForestManager;
+    private StoryBackgroundManager storyBackgroundManager;
 
     void Start()
     {
@@ -58,6 +59,25 @@ public class DialogueEndAction : MonoBehaviour
                 Walker walker = FindObjectOfType<Walker>();
                 walker.isMovingLeft = true;
                 break;
+            case "Ash Walk Away":
+                Debug.Log("Initiating Ash walking away");
+                Walker ashWalker = FindObjectOfType<Walker>();
+                ashWalker.isMovingDown = true;
+                break;
+            case "Finish Second Dialogue":
+                if (storyBackgroundManager is null)
+                {
+                    storyBackgroundManager = FindAnyObjectByType<StoryBackgroundManager>();
+                }
+                storyBackgroundManager.FinishSecondDialogue();
+                break;
+            case "Finish Third Dialogue":
+                if (storyBackgroundManager is null)
+                {
+                    storyBackgroundManager = FindAnyObjectByType<StoryBackgroundManager>();
+                }
+                storyBackgroundManager.FinishThirdDialogue();
+                break;
             case "Pick Up Frog":
                 Debug.Log("Picking up Frog");
                 if (storyForestManager is null)
@@ -81,6 +101,21 @@ public class DialogueEndAction : MonoBehaviour
                     storyForestManager = FindAnyObjectByType<StoryForestManager>();
                 }
                 storyForestManager.RemoveApple();
+                break;
+            case "Pick Up Bag":
+                Debug.Log("Picking up Bag");
+                if (storyBackgroundManager is null)
+                {
+                    storyBackgroundManager = FindAnyObjectByType<StoryBackgroundManager>();
+                }
+                storyBackgroundManager.RemoveBag();
+                break;
+            case "Remove Talk Hint":
+                if (storyBackgroundManager is null)
+                {
+                    storyBackgroundManager = FindAnyObjectByType<StoryBackgroundManager>();
+                }
+                storyBackgroundManager.RemoveTalkHint();
                 break;
             default:
                 break;

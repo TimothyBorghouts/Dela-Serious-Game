@@ -8027,11 +8027,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].question
@@ -8039,11 +8039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleAnswerA
-      value: Take some.
+      value: Pak een appel.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleAnswerB
-      value: Leave them.
+      value: Laat ze liggen.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleAnswerA
@@ -8063,15 +8063,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.data[0]
-      value: Maybe Indigo would like an apple?
+      value: Misschien wil Indigo wel een appel?
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[0]
-      value: I'll take some apples with me.
+      value: Ik neem wat appels mee.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[1]
-      value: I'll leave them.
+      value: Ik laat ze liggen.
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -9624,6 +9624,7 @@ MonoBehaviour:
   moveDistance: 20
   animator: {fileID: 287122621}
   isMovingLeft: 0
+  isMovingDown: 0
   dialogueIsFinished: 0
 --- !u!1 &303843098
 GameObject:
@@ -9758,11 +9759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].question
@@ -9774,11 +9775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleAnswerA
-      value: Take it.
+      value: Neem de steen mee.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleAnswerB
-      value: Leave it.
+      value: Laat de steen liggen.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleAnswerA
@@ -9798,15 +9799,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.data[0]
-      value: I remember almost hitting Ash when I tried to throw a rock... Whoops!
+      value: Ik herinner me dat ik Ash bijna raakte toen ik een steen probeerde te
+        gooien... Oeps!
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[0]
-      value: I'll take the rock with me.
+      value: Ik neem de steen mee.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[1]
-      value: I'll leave it.
+      value: Ik laat de steen liggen.
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -10371,13 +10373,13 @@ MonoBehaviour:
     - name: Indigo
       question: 0
       possibleSentences:
-      - Sorry I walked away earlier. I didn't know what to say.
+      - Sorry dat ik eerder ben weggelopen. Ik wist niet wat ik moest zeggen.
       possibleAnswerA: 
       possibleAnswerB: 
-    - name: You
+    - name: Jij
       question: 0
       possibleSentences:
-      - That's okay. I'm glad we talked anyway.
+      - Dat is niet erg. Ik ben blij dat we toch gepraat hebben.
       possibleAnswerA: 
       possibleAnswerB: 
   DialogueEndAction: 1
@@ -10589,7 +10591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
@@ -10597,7 +10599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[3].name
@@ -10613,11 +10615,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleAnswerA
-      value: Tell them what happened
+      value: Vertel ze wat er is gebeurd.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleAnswerB
-      value: Stay quiet
+      value: Blijf stil.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleAnswers.Array.size
@@ -10669,11 +10671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.data[0]
-      value: Do I tell Indigo what happened?
+      value: Vertel ik Indigo wat er is gebeurd?
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[3].possibleSentences.Array.data[0]
-      value: ...oh. I'm sorry. How...? Nevermind.
+      value: ...oh. Dat is... Hoe...?
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[3].possibleSentences.Array.data[1]
@@ -10844,6 +10846,7 @@ MonoBehaviour:
   Transition: {fileID: 932495806}
   sceneName: OutsideScene
   playerPosition: {x: 3.5, y: 0.75}
+  LongFadeOut: 0
 --- !u!61 &951441262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11320,11 +11323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].question
@@ -11336,11 +11339,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleAnswerA
-      value: Take the frog.
+      value: Neem de kikker mee.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleAnswerB
-      value: Let it go.
+      value: Zet de kikker terug.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleAnswerA
@@ -11360,15 +11363,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.data[0]
-      value: Gotcha!
+      value: Hebbes!
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[0]
-      value: I'll take the frog with me.
+      value: Ik neem de kikker mee.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[1]
-      value: I'll let the frog go for now.
+      value: Ik laat de kikker voorlopig gaan.
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Size.y
@@ -19532,7 +19535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue >>>
+  m_text: Doorgaan >>>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a58a81f77550f74c9cff3d1400c7d22, type: 2}
   m_sharedMaterial: {fileID: -2292616581032128979, guid: 2a58a81f77550f74c9cff3d1400c7d22, type: 2}

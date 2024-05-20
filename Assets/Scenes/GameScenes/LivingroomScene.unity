@@ -2726,6 +2726,7 @@ MonoBehaviour:
   Transition: {fileID: 1152540025}
   sceneName: BedroomScene
   playerPosition: {x: 3.5, y: 0.75}
+  LongFadeOut: 0
 --- !u!1 &613476272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,7 +3417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].name
@@ -3424,7 +3425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[3].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[4].name
@@ -3432,7 +3433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[5].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[6].name
@@ -3440,7 +3441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[7].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[8].name
@@ -3500,24 +3501,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[4].possibleSentences.Array.data[0]
-      value: "Oh Fern! Didn\u2019t see you there."
+      value: Oh Fern! Ik had je daar niet zien staan.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[5].possibleSentences.Array.data[0]
-      value: "What\u2019s up?"
+      value: Hoe is het?
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[6].possibleSentences.Array.data[0]
-      value: "Ash gave me this\u2026 a while ago\u2026 Never got around to reading
-        it."
+      value: Ash gaf me dit... een tijdje geleden... Nooit toegekomen om het te lezen.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[7].possibleSentences.Array.data[0]
-      value: "Can\u2019t believe they\u2019re gone\u2026"
+      value: Ik kan niet geloven dat die weg is...
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[8].possibleSentences.Array.data[0]
-      value: Me either...
+      value: Ik ook niet...
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
@@ -3525,7 +3525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8741714200349198411, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3822,7 +3822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].name
@@ -3834,7 +3834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[4].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.size
@@ -3858,23 +3858,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.data[0]
-      value: Goodmorning, how are you holding up?
+      value: Goedemorgen, hoe gaat het met je?
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[0]
-      value: "I don\u2019t know\u2026 it\u2019s scary."
+      value: Ik weet het niet... Het is eng.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.data[0]
-      value: "I\u2019m sorry about what happened."
+      value: Het spijt me wat er is gebeurd.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[3].possibleSentences.Array.data[0]
-      value: "I think I\u2019ll make us pasta tonight, your favorite!"
+      value: Ik denk dat ik vanavond pasta voor ons ga maken, jouw favoriet!
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[4].possibleSentences.Array.data[0]
-      value: Thanks, I appreciate that.
+      value: Bedankt, dat waardeer ik.
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Size.y
@@ -3890,7 +3890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8741714200349198411, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6758,7 +6758,7 @@ MonoBehaviour:
     - name: You
       question: 0
       possibleSentences:
-      - I should not leave before I talked to mom
+      - Ik zou niet weg moeten gaan voordat ik met mama heb gesproken.
       possibleAnswerA: 
       possibleAnswerB: 
   DialogueEndAction: 0
@@ -6919,6 +6919,7 @@ MonoBehaviour:
   Transition: {fileID: 1152540025}
   sceneName: OutsideScene
   playerPosition: {x: 0, y: 0}
+  LongFadeOut: 0
 --- !u!1 &2135415187
 GameObject:
   m_ObjectHideFlags: 0

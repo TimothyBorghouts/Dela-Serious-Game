@@ -9,6 +9,8 @@ public class ScenesManager : MonoBehaviour
     public string sceneName;
     public Vector2 playerPosition;
 
+    public bool LongFadeOut;
+
     private void Start()
     {
         audioManager = FindAnyObjectByType<AudioManager>();
@@ -28,16 +30,34 @@ public class ScenesManager : MonoBehaviour
         gameObject.transform.position = playerPosition;
     }
 
+    public void goToScene(string sceneName)
+    {
+        StartCoroutine(LoadScene(sceneName));
+    }
+
     IEnumerator LoadScene(string SceneName)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Animator playerAnimator = player.GetComponent<Animator>();
-        playerAnimator.SetBool("IsMoving", false);
-        audioManager.StopAudio("Footsteps");
-        playerAnimator.SetBool("IsTalking", true);
 
-        Transition.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(1);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        audioManager.StopAudio("Footsteps");
+        
+        if(player != null)
+        {
+            Animator playerAnimator = player.GetComponent<Animator>();
+            playerAnimator.SetBool("IsMoving", false);
+            playerAnimator.SetBool("IsTalking", true);
+        }
+
+        if(LongFadeOut)
+        {
+            Transition.SetTrigger("LongFadeOut");
+            yield return new WaitForSeconds(5);
+        }
+        else
+        {
+            Transition.SetTrigger("FadeOut");
+            yield return new WaitForSeconds(1);
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         if (sceneName == "ForestScene")
         {
