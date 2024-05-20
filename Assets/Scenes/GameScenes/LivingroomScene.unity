@@ -3696,8 +3696,12 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2556947675168821748, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2556947675168821748, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.68
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 4299965243867929714, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3706,7 +3710,7 @@ PrefabInstance:
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1261446414, guid: 230480daffbff33449e577fe35ca064b, type: 3}
+      objectReference: {fileID: -643404705, guid: 230480daffbff33449e577fe35ca064b, type: 3}
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SortingLayer
       value: 18
@@ -3919,13 +3923,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1749240382376763654, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1425027112}
+    - targetCorrespondingSourceObject: {fileID: 3919072205454691910, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1425027116}
   m_SourcePrefab: {fileID: 100100000, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
 --- !u!1 &1425027111 stripped
 GameObject:
@@ -3963,6 +3971,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3919072205454691910, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
   m_PrefabInstance: {fileID: 1425027110}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1425027115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8741714200349198411, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+  m_PrefabInstance: {fileID: 1425027110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1425027116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425027114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5910273e02a6e54aaec8b297c5f887d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 1543416138}
+  dialogue:
+    dialogueParts:
+    - name: 'Sage '
+      question: 0
+      possibleSentences:
+      - Goedemorgen, hoe gaat het met je?
+      possibleAnswerA: 
+      possibleAnswerB: 
+    - name: Jij
+      question: 0
+      possibleSentences:
+      - Ik weet het niet... Het is eng.
+      possibleAnswerA: 
+      possibleAnswerB: 
+    - name: 'Sage '
+      question: 0
+      possibleSentences:
+      - Het spijt me wat er is gebeurd.
+      possibleAnswerA: 
+      possibleAnswerB: 
+    - name: 'Sage '
+      question: 0
+      possibleSentences:
+      - Ik denk dat ik vanavond pasta voor ons ga maken, je favoriet!
+      possibleAnswerA: 
+      possibleAnswerB: 
+    - name: Jij
+      question: 0
+      possibleSentences:
+      - Bedankt, dat waardeer ik.
+      possibleAnswerA: 
+      possibleAnswerB: 
+  DialogueEndAction: 1
+  dialogueEndAction: {fileID: 1543416139}
+  endAction: Increase Red
+  npc: 1
+  npcAlert: {fileID: 1425027115}
+  DialogueCoolDown: 0
+  animator: {fileID: 1425027112}
 --- !u!95 &1492450973 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7071623279429096618, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
@@ -6746,6 +6811,7 @@ MonoBehaviour:
   outsideCollider: {fileID: 2026740644}
   SageCollider: {fileID: 1425027114}
   messageCollider: {fileID: 1903313883}
+  sageAnimator: {fileID: 1425027112}
   dialogueManager: {fileID: 1543416138}
   Dialogue:
     dialogueParts: []
