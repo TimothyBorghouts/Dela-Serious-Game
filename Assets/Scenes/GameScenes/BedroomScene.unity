@@ -2375,7 +2375,7 @@ PrefabInstance:
     - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1212807823}
     - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ContinueDialogue

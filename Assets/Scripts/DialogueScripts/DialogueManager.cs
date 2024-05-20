@@ -20,6 +20,8 @@ public class DialogueManager : MonoBehaviour
     public Animator Playeranimator;
 
     public bool endOfDialogue;
+
+    public string pickupAnswer = "";
     
     private AudioManager audioManager;
     private PlayerController playerController;
@@ -37,6 +39,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        pickupAnswer = "";
         Playeranimator.SetBool("IsMoving", false);
         Playeranimator.SetBool("IsTalking", true);
         dialogueAnimator.SetBool("IsOpen", true);
@@ -58,7 +61,6 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence(int answer = 0)
     {
-
         ChoiceBox.SetActive(false);
         if (sentenceQueue.Count == 0)
         {
@@ -91,63 +93,10 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(HideContinueButton(dialoguePart.possibleSentences[answer]));
         }
 
-        PickUp(dialoguePart.possibleSentences[answer]);
+        pickupAnswer = dialoguePart.possibleSentences[answer];
+
+        //PickUp(dialoguePart.possibleSentences[answer]);
         StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
-    }
-
-    private void PickUp(string sentence)
-    {
-        switch (sentence)
-        {
-            case "Ik neem de tas mee.":
-                Debug.Log("Picking up the bag");
-                DeleteItemBackstory(1);
-                break;
-            case "Ik neem de kikker mee.":
-                Debug.Log("Picking up the frog");
-                DeleteItemForest(1);
-                break;
-            case "Ik neem de steen mee.":
-                Debug.Log("Picking up the rock");
-                DeleteItemForest(2);
-                break;
-            case "Ik neem wat appels mee.":
-                Debug.Log("Picking up some apples.");
-                DeleteItemForest(3);
-                break;
-        }
-    }
-
-    private void DeleteItemBackstory(int index)
-    {
-        StoryBackgroundManager manager = FindAnyObjectByType<StoryBackgroundManager>();
-        if (manager != null)
-        {
-            if (index == 1)
-            {
-                manager.RemoveBag();
-            }
-        }
-    }
-
-    private void DeleteItemForest(int index)
-    {
-        StoryForestManager manager = FindAnyObjectByType<StoryForestManager>();
-        if (manager != null)
-        {
-            if (index == 1)
-            {
-                manager.RemoveFrog();
-            }
-            else if (index == 2)
-            {
-                manager.RemoveRock();
-            }
-            else if (index == 3)
-            {
-                manager.RemoveApple();
-            }
-        }
     }
 
     private IEnumerator TypeSentence(string sentence)
