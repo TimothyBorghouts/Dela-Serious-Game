@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueInteractable : MonoBehaviour
 {
     protected bool isInRange;
     private bool isDialogueOpen;
+
+    public Button continueButton;
 
     public DialogueManager dialogueManager;
     public Dialogue dialogue;
@@ -69,6 +72,9 @@ public class DialogueInteractable : MonoBehaviour
     {
         dialogueManager.StartDialogue(dialogue);
         isDialogueOpen = true;
+        //Debug.Log(continueButton.get)
+        //continueButton.onClick.RemoveAllListeners();
+        continueButton.onClick.AddListener(ContinueDialogue);
     }
 
     //6. Continue the dialogue with the npc
@@ -104,6 +110,7 @@ public class DialogueInteractable : MonoBehaviour
             }
             dialogueEndAction.ExecuteAction(endAction);
         }
+        continueButton.onClick.RemoveListener(ContinueDialogue);
     }
 
     private void PickUp(string sentence)

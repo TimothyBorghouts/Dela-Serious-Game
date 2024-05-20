@@ -8010,6 +8010,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1742609577}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 234997358}
@@ -8075,18 +8079,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.3333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.3333334
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8741714200349198411, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5986884703465721180, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 1282934570}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
@@ -9742,6 +9746,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1742609577}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 234997358}
@@ -9832,14 +9840,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.0002137
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8741714200349198411, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5986884703465721180, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 760818582}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
@@ -10377,6 +10385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 1742609577}
   dialogueManager: {fileID: 234997358}
   dialogue:
     dialogueParts:
@@ -10590,6 +10599,10 @@ PrefabInstance:
       propertyPath: endAction
       value: Indigo Walk Left
       objectReference: {fileID: 0}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1742609577}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
       value: 
@@ -11263,7 +11276,7 @@ PrefabInstance:
       objectReference: {fileID: 179997320, guid: 448a51f6df0b2cc4db1fd43a2679ad25, type: 3}
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SortingLayer
-      value: 14
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5856683123673630906, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SortingLayerID
@@ -11321,6 +11334,10 @@ PrefabInstance:
       propertyPath: endAction
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1742609577}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
       value: 
@@ -11403,14 +11420,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.9375
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8741714200349198411, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5986884703465721180, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 339427160}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1749240382376763654, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
@@ -19294,19 +19311,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1742609578}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 782750607}
-        m_TargetAssemblyTypeName: DialogueInteractable, Assembly-CSharp
-        m_MethodName: ContinueDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1742609578
 MonoBehaviour:
   m_ObjectHideFlags: 0
