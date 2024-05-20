@@ -20,6 +20,8 @@ public class DialogueManager : MonoBehaviour
     public Animator Playeranimator;
 
     public bool endOfDialogue;
+
+    public string pickupAnswer = "";
     
     private AudioManager audioManager;
     private PlayerController playerController;
@@ -37,6 +39,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        pickupAnswer = "";
         Playeranimator.SetBool("IsMoving", false);
         Playeranimator.SetBool("IsTalking", true);
         dialogueAnimator.SetBool("IsOpen", true);
@@ -58,7 +61,6 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence(int answer = 0)
     {
-
         ChoiceBox.SetActive(false);
         if (sentenceQueue.Count == 0)
         {
@@ -91,6 +93,9 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(HideContinueButton(dialoguePart.possibleSentences[answer]));
         }
 
+        pickupAnswer = dialoguePart.possibleSentences[answer];
+
+        //PickUp(dialoguePart.possibleSentences[answer]);
         StartCoroutine(TypeSentence(dialoguePart.possibleSentences[answer]));
     }
 

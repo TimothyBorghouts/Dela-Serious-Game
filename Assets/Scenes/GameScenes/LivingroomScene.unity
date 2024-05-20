@@ -3314,6 +3314,10 @@ PrefabInstance:
       value: Increase Green
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1543416141}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 1543416138}
@@ -3988,6 +3992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5910273e02a6e54aaec8b297c5f887d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 1543416141}
   dialogueManager: {fileID: 1543416138}
   dialogue:
     dialogueParts:
@@ -4159,6 +4164,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -4230,6 +4239,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7857637747236075745, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
   m_PrefabInstance: {fileID: 1543416137}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1543416141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
+  m_PrefabInstance: {fileID: 1543416137}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543416140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620585417
 GameObject:
   m_ObjectHideFlags: 0
@@ -6845,6 +6865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 1543416141}
   dialogueManager: {fileID: 1543416138}
   dialogue:
     dialogueParts:

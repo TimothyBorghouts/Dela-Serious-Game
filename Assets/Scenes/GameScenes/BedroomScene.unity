@@ -1471,10 +1471,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 1052930928}
   dialogueManager: {fileID: 1052930926}
   dialogue:
     dialogueParts:
-    - name: JIj
+    - name: Jij
       question: 1
       possibleSentences:
       - Dit is mijn bed. Zal ik weer gaan slapen?
@@ -1492,6 +1493,7 @@ MonoBehaviour:
   endAction: 
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!70 &897687564
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2368,13 +2370,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1212807823}
     - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ContinueDialogue
@@ -2439,6 +2445,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7857637747236075745, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
   m_PrefabInstance: {fileID: 1052930924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1052930928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
+  m_PrefabInstance: {fileID: 1052930924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052930927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1113131112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,6 +2903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5dbdd0828b85544aaeea0916a305aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 1052930928}
   dialogueManager: {fileID: 1052930926}
   dialogue:
     dialogueParts:
@@ -2912,6 +2930,7 @@ MonoBehaviour:
   endAction: Remove Saturation
   npc: 1
   npcAlert: {fileID: 1153369961}
+  DialogueCoolDown: 0
 --- !u!95 &1213236331 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2479050784564531551, guid: 856de667d68d5d94fa13e22585628e08, type: 3}
@@ -3311,6 +3330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 1052930928}
   dialogueManager: {fileID: 1052930926}
   dialogue:
     dialogueParts:
@@ -3331,6 +3351,7 @@ MonoBehaviour:
   endAction: 
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!1 &1517006773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,6 +5478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 0}
   dialogueManager: {fileID: 1052930926}
   dialogue:
     dialogueParts:
@@ -5471,6 +5493,7 @@ MonoBehaviour:
   endAction: 
   npc: 0
   npcAlert: {fileID: 0}
+  DialogueCoolDown: 0
 --- !u!1001 &2806729626160467407
 PrefabInstance:
   m_ObjectHideFlags: 0

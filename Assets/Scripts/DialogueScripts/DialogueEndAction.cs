@@ -78,38 +78,6 @@ public class DialogueEndAction : MonoBehaviour
                 }
                 storyBackgroundManager.FinishThirdDialogue();
                 break;
-            case "Pick Up Frog":
-                Debug.Log("Picking up Frog");
-                if (storyForestManager is null)
-                {
-                    storyForestManager = FindAnyObjectByType<StoryForestManager>();
-                }
-                storyForestManager.RemoveFrog();
-                break;
-            case "Pick Up Rock":
-                Debug.Log("Picking up Rock");
-                if (storyForestManager is null)
-                {
-                    storyForestManager = FindAnyObjectByType<StoryForestManager>();
-                }
-                storyForestManager.RemoveRock();
-                break;
-            case "Pick Up Apples":
-                Debug.Log("Picking up Apples");
-                if (storyForestManager is null)
-                {
-                    storyForestManager = FindAnyObjectByType<StoryForestManager>();
-                }
-                storyForestManager.RemoveApple();
-                break;
-            case "Pick Up Bag":
-                Debug.Log("Picking up Bag");
-                if (storyBackgroundManager is null)
-                {
-                    storyBackgroundManager = FindAnyObjectByType<StoryBackgroundManager>();
-                }
-                storyBackgroundManager.RemoveBag();
-                break;
             case "Remove Talk Hint":
                 if (storyBackgroundManager is null)
                 {

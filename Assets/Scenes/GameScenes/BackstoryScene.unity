@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 0}
   dialogueManager: {fileID: 1269537123}
   dialogue:
     dialogueParts:
@@ -255,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 39015620}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.663632, y: -21.048347, z: 0.13698784}
+  m_LocalPosition: {x: 15.663632, y: -22.04835, z: 0.13698784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -366,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 0}
   dialogueManager: {fileID: 1269537123}
   dialogue:
     dialogueParts:
@@ -956,6 +958,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1269537125}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 1269537123}
@@ -1138,15 +1144,19 @@ PrefabInstance:
       objectReference: {fileID: 900767365}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: endAction
-      value: Pick Up Bag
+      value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1269537125}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 1269537123}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: DialogueEndAction
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueEndAction
@@ -9540,6 +9550,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5026506326845970740, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -9596,6 +9618,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7857637747236075745, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
   m_PrefabInstance: {fileID: 1269537121}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1269537125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4354958880907740064, guid: 1b7edde756f6ba04cba9527281bc0d5d, type: 3}
+  m_PrefabInstance: {fileID: 1269537121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269537124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1295094137
 GameObject:
   m_ObjectHideFlags: 0
@@ -11179,6 +11212,10 @@ PrefabInstance:
       value: Ash Walk Away
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 1269537125}
+    - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 1269537123}
@@ -11435,8 +11472,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 866222285
-  m_SortingLayer: 14
+  m_SortingLayerID: -1284061879
+  m_SortingLayer: 20
   m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -11943,6 +11980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 1269537125}
   dialogueManager: {fileID: 1269537123}
   dialogue:
     dialogueParts:
@@ -14115,6 +14153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continueButton: {fileID: 1269537125}
   dialogueManager: {fileID: 1269537123}
   dialogue:
     dialogueParts:
