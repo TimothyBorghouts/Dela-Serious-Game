@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class StoryForestManager : MonoBehaviour
@@ -46,7 +43,7 @@ public class StoryForestManager : MonoBehaviour
             if (!IndigoQuestHint)
             {
                 IndigoQuestHint = true;
-                StartCoroutine(ShowHint("Maybe I could find something to talk about?"));
+                StartCoroutine(ShowHint("Misschien kan ik iets vinden om over te praten?"));
                 ToggleBubbles(true);
             }
             if (Apple.activeSelf && Frog.activeSelf && Rock.activeSelf)
@@ -63,7 +60,7 @@ public class StoryForestManager : MonoBehaviour
 
         if (!IndigoEndDialogue.activeSelf && IndigoQuestEnd)
         {
-            StartCoroutine(ShowHint("Oh… I didn’t notice the flowers were so pretty..."));
+            StartCoroutine(ShowHint("Oh... ik had niet gemerkt dat de bloemen zo mooi waren..."));
             IndigoEndDialogue.SetActive(false);
             ToggleBubbles(false);
             IndigoQuestEnd = false;
@@ -99,11 +96,11 @@ public class StoryForestManager : MonoBehaviour
         {
             new DialoguePart()
             {
-                name = "You",
+                name = "Jij",
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "I picked some apples. Do you want any?"
+                    "Ik heb wat appels geplukt. Wil je er een?"
                 }
             },
             new DialoguePart()
@@ -112,7 +109,7 @@ public class StoryForestManager : MonoBehaviour
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "Oh... I haven't eaten apples in a long time."
+                    "Oh... Ik heb al een hele tijd geen appels meer gegeten."
                 }
             },
             new DialoguePart()
@@ -121,16 +118,16 @@ public class StoryForestManager : MonoBehaviour
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "Sure, I'll have some apples. Thanks."
+                    "Natuurlijk, ik neem wat appels mee. Bedankt."
                 }
             },
             new DialoguePart()
             {
-                name = "You",
+                name = "Jij",
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "Here you go."
+                    "Alsjeblieft."
                 }
             },
         };
@@ -149,34 +146,16 @@ public class StoryForestManager : MonoBehaviour
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "Is that a frog?"
+                    "Is dat een kikker?"
                 }
             },
             new DialoguePart()
             {
-                name = "You",
+                name = "Jij",
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "Yes."
-                }
-            },
-            new DialoguePart()
-            {
-                name = "Indigo",
-                question = false,
-                possibleSentences = new string[]
-                {
-                    "Why?"
-                }
-            },
-            new DialoguePart()
-            {
-                name = "You",
-                question = false,
-                possibleSentences = new string[]
-                {
-                    "It reminded me of Ash. We used to catch frogs all the time."
+                    "Jup."
                 }
             },
             new DialoguePart()
@@ -185,7 +164,25 @@ public class StoryForestManager : MonoBehaviour
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "Yeah, that sounds like something Ash would enjoy doing."
+                    "Waarom?"
+                }
+            },
+            new DialoguePart()
+            {
+                name = "Jij",
+                question = false,
+                possibleSentences = new string[]
+                {
+                    "Het deed me aan Ash denken. Vroeger vingen we altijd kikkers."
+                }
+            },
+            new DialoguePart()
+            {
+                name = "Indigo",
+                question = false,
+                possibleSentences = new string[]
+                {
+                    "Ja, dat klinkt als iets dat Ash graag zou doen."
                 }
             },
         };
@@ -200,47 +197,20 @@ public class StoryForestManager : MonoBehaviour
         {
             new DialoguePart()
             {
-                name = "You",
+                name = "Jij",
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "Look at this rock I found."
+                    "Kijk eens naar deze steen die ik heb gevonden."
                 }
             },
             new DialoguePart()
             {
-                name = "You",
+                name = "Jij",
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "It'd be perfect for rock skipping."
-                }
-            },
-            new DialoguePart()
-            {
-                name = "Indigo",
-                question = false,
-                possibleSentences = new string[]
-                {
-                    "How do you know?"
-                }
-            },
-            new DialoguePart()
-            {
-                name = "You",
-                question = false,
-                possibleSentences = new string[]
-                {
-                    "I used to skip rocks with Ash."
-                }
-            },
-            new DialoguePart()
-            {
-                name = "You",
-                question = false,
-                possibleSentences = new string[]
-                {
-                    "The trick is to find a rock with a flat surface on both sides. That way it can skip farther. "
+                    "Het zou perfect zijn voor rock skipping"
                 }
             },
             new DialoguePart()
@@ -249,16 +219,43 @@ public class StoryForestManager : MonoBehaviour
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "Oh... I'm sorry for reminding you."
+                    "Hoe weet je dat?"
                 }
             },
             new DialoguePart()
             {
-                name = "You",
+                name = "Jij",
                 question = false,
                 possibleSentences = new string[]
                 {
-                    "That's okay, it's a good memory."
+                    "Ik deed soms rock skipping met Ash."
+                }
+            },
+            new DialoguePart()
+            {
+                name = "Jij",
+                question = false,
+                possibleSentences = new string[]
+                {
+                    "De truc is om een steen te vinden met aan beide kanten een plat oppervlak. Zo kan die verder over het water stuiteren."
+                }
+            },
+            new DialoguePart()
+            {
+                name = "Indigo",
+                question = false,
+                possibleSentences = new string[]
+                {
+                    "Oh... Sorry dat ik je eraan herinnerde."
+                }
+            },
+            new DialoguePart()
+            {
+                name = "Jij",
+                question = false,
+                possibleSentences = new string[]
+                {
+                    "Dat is oké, het is een goede herinnering."
                 }
             },
         };

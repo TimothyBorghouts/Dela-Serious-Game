@@ -123,6 +123,110 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &17085843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17085844}
+  - component: {fileID: 17085846}
+  - component: {fileID: 17085845}
+  m_Layer: 0
+  m_Name: TalkhintCollider
+  m_TagString: Bedroomdoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &17085844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17085843}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.095701, y: 2.82, z: 0.2419362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1254093038}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &17085845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17085843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 1269537123}
+  dialogue:
+    dialogueParts:
+    - name: Jij
+      question: 0
+      possibleSentences:
+      - Ik kan met Ash praten door naast hem te staan en op [E] te drukken.
+      possibleAnswerA: 
+      possibleAnswerB: 
+  DialogueEndAction: 1
+  dialogueEndAction: {fileID: 1269537122}
+  endAction: Remove Talk Hint
+  npc: 0
+  npcAlert: {fileID: 0}
+--- !u!61 &17085846
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17085843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.27399194, y: 1.2939844}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.8704405, y: 5.903572}
+  m_EdgeRadius: 0
 --- !u!1 &39015620
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,10 +369,10 @@ MonoBehaviour:
   dialogueManager: {fileID: 1269537123}
   dialogue:
     dialogueParts:
-    - name: You
+    - name: Jij
       question: 0
       possibleSentences:
-      - I should follow Ash and not go in the forest alone.
+      - Ik moet Ash volgen en niet in mijn eentje het bos in gaan.
       possibleAnswerA: 
       possibleAnswerB: 
   DialogueEndAction: 0
@@ -864,15 +968,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].name
-      value: Signpost
+      value: Wegwijzer
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
-      value: Signpost
+      value: Wegwijzer
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].name
-      value: Signpost
+      value: Wegwijzer
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.size
@@ -888,15 +992,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.data[0]
-      value: "\u2190 Town"
+      value: "\u2190 Stad"
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[0]
-      value: "Cliff \u2192"
+      value: "Klif \u2192"
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.data[0]
-      value: "Forest \u2193"
+      value: "Bos \u2193"
       objectReference: {fileID: 0}
     - target: {fileID: 6759108115396524132, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -1053,15 +1157,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].name
-      value: You
+      value: Jij
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].question
@@ -1081,11 +1185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleAnswerA
-      value: Take the bag
+      value: Neem de tas mee
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleAnswerB
-      value: Leave it
+      value: Laat de tas liggen
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.size
@@ -1101,11 +1205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.data[0]
-      value: This is Ash's bag which he lost.
+      value: Dit is de tas van Ash die hij kwijt is.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[0]
-      value: Should I take the bag with me?
+      value: Moet ik de tas meenemen?
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[1]
@@ -1113,11 +1217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.data[0]
-      value: I'll take the bag with me.
+      value: Ik neem de tas mee.
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[2].possibleSentences.Array.data[1]
-      value: I'll leave it.
+      value: Ik laat de tas liggen.
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -1190,6 +1294,7 @@ MonoBehaviour:
   BagBubble: {fileID: 900767365}
   HintBox: {fileID: 2133302791}
   HintText: {fileID: 2133302790}
+  TalkHint: {fileID: 17085843}
   FirstBuble: {fileID: 1365698607}
   SecondBuble: {fileID: 426216318}
   ThirdBuble: {fileID: 1144996621}
@@ -1324,11 +1429,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.44
+      value: -5.55
       objectReference: {fileID: 0}
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.57
+      value: -3.72
       objectReference: {fileID: 0}
     - target: {fileID: 3374729614261348215, guid: 96fa9da0df5f61446ab4959bfd898f17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9371,6 +9476,7 @@ Transform:
   - {fileID: 39015621}
   - {fileID: 265108717}
   - {fileID: 46304355}
+  - {fileID: 17085844}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1269537121
@@ -11105,11 +11211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[0].possibleSentences.Array.data[0]
-      value: Come on, come on!
+      value: Kom, kom!
       objectReference: {fileID: 0}
     - target: {fileID: 6455296695154237672, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: dialogue.dialogueParts.Array.data[1].possibleSentences.Array.data[0]
-      value: Hurry!
+      value: Schiet op!
       objectReference: {fileID: 0}
     - target: {fileID: 7807286064332900902, guid: 8a43ba6d248cd884b8c1430cf0d7b3db, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
@@ -11842,20 +11948,19 @@ MonoBehaviour:
     - name: Ash
       question: 0
       possibleSentences:
-      - Have you seen my bag around here? I lost it somewhere.
+      - Heb je mijn tas gezien? Ik ben hem ergens kwijtgeraakt.
       possibleAnswerA: 
       possibleAnswerB: 
     - name: Ash
       question: 0
       possibleSentences:
-      - "If you can find it and pick it up (with E), I\u2019ll get us cheeseburgers
-        later."
+      - Als je hem kunt vinden en oppakt (met E), zal ik hamburgers voor ons halen.
       possibleAnswerA: 
       possibleAnswerB: 
-    - name: You
+    - name: Jij
       question: 0
       possibleSentences:
-      - I'll find it for you.
+      - Ik zal hem voor je vinden.
       possibleAnswerA: 
       possibleAnswerB: 
   DialogueEndAction: 1
@@ -14014,19 +14119,19 @@ MonoBehaviour:
     - name: Ash
       question: 0
       possibleSentences:
-      - Thanks for finding my bag.
+      - Bedankt voor het vinden van mijn tas.
       possibleAnswerA: 
       possibleAnswerB: 
     - name: Ash
       question: 0
       possibleSentences:
-      - "Let\u2019s take the scenic route to trough the forest today"
+      - Laten we vandaag de route door het bos nemen om naar de stad te gaan.
       possibleAnswerA: 
       possibleAnswerB: 
     - name: Ash
       question: 0
       possibleSentences:
-      - Follow me!
+      - Volg me!
       possibleAnswerA: 
       possibleAnswerB: 
   DialogueEndAction: 1
@@ -14087,11 +14192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3537449757562951094, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.9188814
       objectReference: {fileID: 0}
     - target: {fileID: 3537449757562951094, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0057401657
       objectReference: {fileID: 0}
     - target: {fileID: 5953279621065857734, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_BoundingShape2D
@@ -14099,11 +14204,11 @@ PrefabInstance:
       objectReference: {fileID: 621547333}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.44
+      value: -0.6311188
       objectReference: {fileID: 0}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.57
+      value: -3.7142599
       objectReference: {fileID: 0}
     - target: {fileID: 6124164274733330675, guid: 3a821cc8502a76f4693b72715c71ed9c, type: 3}
       propertyPath: m_LocalPosition.z

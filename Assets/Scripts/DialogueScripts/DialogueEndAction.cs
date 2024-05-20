@@ -110,6 +110,13 @@ public class DialogueEndAction : MonoBehaviour
                 }
                 storyBackgroundManager.RemoveBag();
                 break;
+            case "Remove Talk Hint":
+                if (storyBackgroundManager is null)
+                {
+                    storyBackgroundManager = FindAnyObjectByType<StoryBackgroundManager>();
+                }
+                storyBackgroundManager.RemoveTalkHint();
+                break;
             default:
                 break;
         }

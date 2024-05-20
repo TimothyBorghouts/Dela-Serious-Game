@@ -63,7 +63,7 @@ public class DialogueManager : MonoBehaviour
 
         DialoguePart dialoguePart = sentenceQueue.Dequeue();
         nameText.text = nameQueue.Dequeue();
-        if (nameText.text == "You")
+        if (nameText.text == "Jij")
         {
             nameText.horizontalAlignment = HorizontalAlignmentOptions.Right;
         }

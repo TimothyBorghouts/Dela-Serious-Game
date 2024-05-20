@@ -18,6 +18,8 @@ public class StoryBackgroundManager : MonoBehaviour
     public GameObject HintBox;
     public TextMeshProUGUI HintText;
 
+    public GameObject TalkHint;
+
     public GameObject FirstBuble;
     public GameObject SecondBuble;
     public GameObject ThirdBuble;
@@ -32,7 +34,7 @@ public class StoryBackgroundManager : MonoBehaviour
     {
         BedroomCollider.SetActive(false);
         MessageCollider.SetActive(true);
-        StartCoroutine(ShowHint("I should talk to Ash."));
+        StartCoroutine(ShowHint("Loop naar Ash toe door te lopen met [w][a][s][d] of de pijltjes toetsen."));
         walker = FindObjectOfType<Walker>();
     }
 
@@ -51,7 +53,7 @@ public class StoryBackgroundManager : MonoBehaviour
                 //Activate the second dialogue
                 AshSecondDialogue.SetActive(true);
                 SecondBuble.SetActive(true);
-                StartCoroutine(ShowHint("I should follow ash before I lose him."));
+                StartCoroutine(ShowHint("Ik moet Ash volgen voordat ik hem kwijtraak."));
             }
         }
 
@@ -91,19 +93,24 @@ public class StoryBackgroundManager : MonoBehaviour
 
     public void FinishSecondDialogue()
     {
-        StartCoroutine(ShowHint("I should find Ash's bag by standing near it and pressing [E]."));
+        StartCoroutine(ShowHint("Ik ga de tas van Ash vinden door er naast te staan en op [E] te drukken."));
         BagDialogue.SetActive(true);
         BagBubble.SetActive(true);
     }
 
     public void FinishThirdDialogue()
     {
-        StartCoroutine(ShowHint("I should follow ash to the forest."));
+        StartCoroutine(ShowHint("Ik ga Ash volgen naar het bos."));
         thirdDialogueEnded = true;
         BedroomCollider.SetActive(true);
         MessageCollider.SetActive(false);
         AshThirdDialogue.SetActive(false);
         walker.isMovingDown = true;
+    }
+
+    public void RemoveTalkHint()
+    {
+        TalkHint.SetActive(false);
     }
 
     public void RemoveBag()
