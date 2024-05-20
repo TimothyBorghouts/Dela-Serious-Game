@@ -5478,7 +5478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1817058a9a25d4da1c7c94f4d955d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 1052930928}
   dialogueManager: {fileID: 1052930926}
   dialogue:
     dialogueParts:
