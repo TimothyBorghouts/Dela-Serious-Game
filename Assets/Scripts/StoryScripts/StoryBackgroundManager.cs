@@ -34,7 +34,7 @@ public class StoryBackgroundManager : MonoBehaviour
     {
         BedroomCollider.SetActive(false);
         MessageCollider.SetActive(true);
-        StartCoroutine(ShowHint("Loop naar Ash toe met [w] [a] [s] [d] of de pijltjes toetsen."));
+        StartCoroutine(ShowHint("Loop naar Ash toe met wasd of de pijltjes toetsen en druk op e."));
         walker = FindObjectOfType<Walker>();
     }
 
